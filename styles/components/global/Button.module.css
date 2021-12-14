@@ -1,0 +1,75 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width:335px;
+  height: 40px;
+  color: #121212;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin:0px;
+}
+
+@media screen and (min-width:1440px) {
+  .button {
+    width: 343px;
+  }
+}
+
+@media screen and (max-width:614px) {
+  .button {
+    width: 100%;
+  }
+}
+
+.smallButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: auto;
+  border-radius: 20px;
+  padding:auto 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 100%;
+  /* or 12px */
+
+  text-align: center;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.smallButtonContained {
+  color: #121212;
+  background-color: #FFFFFF;
+}
+
+.smallButtonOutlined {
+  color: #FFFFFF;
+  background-color: #121212;
+  border:1px solid #FFFFFF;
+}
+
+.button:hover, .smallButtonContained:hover {
+  color: #FFFFFF;
+  background-color: #121212;
+  border:1px solid #FFFFFF;
+}
+
+.smallButtonOutlined:hover {
+  color: #121212;
+  background-color: #FFFFFF;
+  border:1px solid transparent;
+}

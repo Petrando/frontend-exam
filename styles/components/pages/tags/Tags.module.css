@@ -1,0 +1,27 @@
+.container{
+  /*background-color: rosybrown;*/
+  min-height:100vh;
+  margin-top: 0px;
+}
+
+.pageTitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  letter-spacing: 0.25px;
+  margin-top: 0px;
+  position: relative;
+  text-align: start;
+  top:calc(92px + 7.5px);
+}
+
+@media screen and (max-width:414px) {
+  .container {
+    min-height: calc(100vh - 70px);
+  }
+
+  .pageTitle {
+    font-size: 24px;
+    top:20px;
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width:1024px) {/*change this into 1440px later...*/
+  .main {
+    width: calc(100% - 375px);
+  }
+}

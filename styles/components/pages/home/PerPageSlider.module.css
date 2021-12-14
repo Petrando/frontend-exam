@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  height: calc(26.44444444444444vh - 0.25px);/*figma height : 238px*/
+  /*background-color: darkcyan;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  border-bottom: 0.25px solid rgba(255, 255, 255, 0.1);
+}
+
+.container h4{
+  margin-top: 3.33333333333333vh;
+  padding:0px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.container * {
+  margin-bottom: 2.22222222222222vh;
+}
+/*
+.container *:not(:first-child){
+  margin-top: 0px;
+}
+
+.container *:last-child {
+   margin: 0px;
+}*/
+
+.resultCount {
+  height:50px;
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+}
+
+.resultCount .countNumber {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 150%;
+  margin-right: 10px;
+}
+
+.resultCount .result {
+  height:48px;
+  width: auto;
+  
+  margin: 0px;
+  padding:0px;
+  /* identical to box height, or 24px */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+
+/*
+figma mobile height:202px + 218px = 420
+total mobile height: 812px
+*/
+
+@media screen and (max-width:414px) {
+  .container {
+    height: calc(51.72413793103448vh - 0.25px);
+  }
+}

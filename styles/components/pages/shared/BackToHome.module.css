@@ -1,0 +1,19 @@
+.container {
+  height:70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 19px;
+}
+
+.label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  margin:0px;
+  padding:0px;
+  position: relative;
+  left: 13.16px;
+}

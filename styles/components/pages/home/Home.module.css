@@ -1,4 +1,19 @@
 .container {
+  max-height: 100vh !important;
+  padding-top: 0px;
+  /*overflow: hidden;*/
+}
+
+.sectionTitle{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 150%;
+  margin-top: 0px;
+}
+
+/*
+.container {
   padding: 0 2rem;
 }
 
@@ -57,7 +72,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -101,6 +116,7 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+  color:#B2B2B2;
 }
 
 .logo {
@@ -114,3 +130,4 @@
     flex-direction: column;
   }
 }
+*/

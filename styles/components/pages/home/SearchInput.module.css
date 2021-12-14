@@ -1,0 +1,52 @@
+.container {
+  height:calc(22.22222222222222vh - 0.25px);/*figma height : 200px*/
+  /*background-color: chocolate;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border-bottom: 0.25px solid rgba(255, 255, 255, 0.1);
+}
+
+.container h4 {
+  margin-bottom: 2.22222222222222vh;
+  padding:0px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  /*line-height: 150%;*/
+  margin-top: 0px;
+}
+
+.container input{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-height:900px) and (min-width:415px) {
+  .container {
+    justify-content: flex-start;    
+  }
+
+  .container h4 {
+    margin-top: 6vh;
+  }
+}
+
+/*
+container height at mobile : 182px
+total mobile height: 812px
+*/
+
+@media screen and (max-width:414px) {
+  .container {
+    height:22.41379310344828vh;
+    justify-content: flex-end;
+    border-bottom: 0px solid transparent;
+  }
+
+  .container h4{
+    margin-bottom: 1.97044334975369vh;
+  }
+}
+
