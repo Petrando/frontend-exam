@@ -13,7 +13,7 @@
   margin-top: 0px;
   position: relative;
   text-align: start;
-  top:calc(92px + 7.5px);
+  margin-top:calc(92px + 7.5px);
 }
 
 .action {

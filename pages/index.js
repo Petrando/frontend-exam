@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/components/pages/home/Home.module.css'
@@ -7,6 +8,13 @@ import PerPageSlider from '../components/pages/home/PerPageSlider'
 import GoToSearch from '../components/pages/home/GoToSearch'
 
 export default function Home() {
+  useEffect(()=>{
+    fetch("https://avl-frontend-exam.herokuapp.com/api/users/all")
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json)
+      })  
+  })
   return (
     <HomeLayout>     
       <div className={`pageContentContainer ${styles.container} `}>
