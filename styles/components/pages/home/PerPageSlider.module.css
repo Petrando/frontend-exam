@@ -46,7 +46,6 @@
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
-  line-height: 150%;
   margin-right: 10px;
 }
 
@@ -60,7 +59,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
+  position: relative;/*hack positioning*/
+  top: 3px;/*hack positioning*/
 }
 
 /*

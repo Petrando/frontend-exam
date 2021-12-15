@@ -10,7 +10,7 @@ import styles from "../styles/components/pages/search/Search.module.css"
 const Search = () => {
   const [searchData, setData] = useState([])
   useEffect(()=>{
-    fetch("https://avl-frontend-exam.herokuapp.com/api/users/all?page=1&pageSize=15")
+    fetch("https://avl-frontend-exam.herokuapp.com/api/users/all?page=1&pageSize=9")
       .then((res) => res.json())
       .then((json) => {
         console.log(json)
