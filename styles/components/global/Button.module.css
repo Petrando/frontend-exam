@@ -54,6 +54,7 @@
 .smallButtonContained {
   color: #121212;
   background-color: #FFFFFF;
+  border:1px solid #1B1B1B;
 }
 
 .smallButtonOutlined {

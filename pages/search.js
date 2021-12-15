@@ -15,6 +15,9 @@ const Search = () => {
       .then((json) => {
         console.log(json)
         setData(searchData.concat(json.data))
+      })
+      .catch(err => {
+        console.log(err)
       })  
   }, [])
 

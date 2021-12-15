@@ -1,6 +1,6 @@
 .container{
   min-height:100vh;
-  width: calc(100vw - 80px);
+  width: 100%;
   /*background-color: royalblue;*/
   margin-top: 0px;
 }
