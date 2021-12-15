@@ -1,9 +1,5 @@
 .container {
-  height:70px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 19px;
+  display: none;
 }
 
 .label {
@@ -16,4 +12,14 @@
   padding:0px;
   position: relative;
   left: 13.16px;
+}
+
+@media screen and (max-width:414px) {
+  .container {
+    height:70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 19px;
+  }
 }

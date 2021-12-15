@@ -6,9 +6,11 @@ import styles from "../../styles/components/layout/Layout.module.css"
 const Layout = ({children}) => {
   const {width} = useWindowDimensions();
 
+  const navElement =  width > 414?<Navbar />:<BackToHome />
+
   return (
     <div className={styles.container}>
-      {width > 414?<Navbar />:<BackToHome />}
+      {navElement}
       <div className={styles.main}>
         {children}
       </div>
