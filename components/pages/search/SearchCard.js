@@ -4,7 +4,7 @@ import styles from "../../../styles/components/pages/search/SearchCard.module.cs
 const SearchCard = ({data, idx}) => {
   const cardImage = idx%3===0?"black-dog":(idx + 1)%3===0?"city":"bambi";
   return (
-    <Grid item xs={1} md={6} lg={4}>
+    <Grid item xs={12} md={6} lg={4}>
       <div className={styles.card}>
         <CardMedia
           component="img"
