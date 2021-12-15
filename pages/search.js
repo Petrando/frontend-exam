@@ -4,6 +4,7 @@ import { Grid } from '@mui/material/'
 import Action from "../components/svg-shapes/Action"
 import Layout from "../components/layout";
 import WithFollowersLayout from "../components/layout/WithFollowersLayout";
+import Button from '../components/global/Button';
 import SearchCard from '../components/pages/search/SearchCard';
 import styles from "../styles/components/pages/search/Search.module.css"
 
@@ -42,6 +43,7 @@ const Search = () => {
               }
             </Grid>
           }
+          <Button label="MORE" />
         </div>
       </WithFollowersLayout>
     </Layout>

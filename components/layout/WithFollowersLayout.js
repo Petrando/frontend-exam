@@ -7,6 +7,7 @@ const WithFollowersLayout = ({children}) => {
     <div className={styles.container}>
       <main className={styles.main}>
         {children}
+        <div className={styles.followersShade} />
       </main>
       <Followers />
     </div>
