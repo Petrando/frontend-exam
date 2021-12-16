@@ -41,6 +41,13 @@ body {
   display: inline;
 }
 
+.hideLongWord {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
 @media screen and (max-width:414px) {
   .pageContentContainer {
     padding:0px 20px;

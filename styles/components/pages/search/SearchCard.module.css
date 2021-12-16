@@ -4,6 +4,7 @@
   justify-content: flex-start;
   height: 197px;
   width: 100%;
+  border-radius: 0px;
 }
 
 .cardContent{
@@ -35,4 +36,10 @@
   margin:3.5px 0px 0px;
   padding:0px;
   color: #B2B2B2;
+}
+
+@media screen and (max-width:414px) {
+  .card {
+    height: 334.03px;
+  }
 }

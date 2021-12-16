@@ -1,7 +1,9 @@
 .container{
   /*background-color: rosybrown;*/
   min-height:100vh;
+  width: 100%;
   margin-top: 0px;
+  
 }
 
 .pageTitle {
@@ -10,9 +12,16 @@
   font-size: 30px;
   letter-spacing: 0.25px;
   margin-top: 0px;
-  position: relative;
   text-align: start;
-  top:calc(92px + 7.5px);
+  margin-top:calc(92px + 7.5px);
+}
+
+.tagsContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width:414px) {
@@ -22,6 +31,6 @@
 
   .pageTitle {
     font-size: 24px;
-    top:20px;
+    margin-top:20px;
   }
 }
