@@ -9,12 +9,17 @@ const Layout = ({children}) => {
   const navElement =  width > 414?<Navbar />:<BackToHome />
 
   return (
-    <div className={styles.container}>
-      {navElement}
-      <div className={styles.main}>
-        {children}
+    <>
+    {
+      width > 0 &&
+      <div className={styles.container}>
+        {navElement}
+        <div className={styles.main}>
+          {children}
+        </div>
       </div>
-    </div>
+    }
+    </> 
 
   )
 }
