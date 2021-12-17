@@ -21,7 +21,7 @@
   height:100%;
 }
 
-@media screen and (min-width:1080px) {/*change this into 1440px later...*/
+@media screen and (min-width:1440px) {/*change this into 1440px later...*/
   .main {
     width: calc(100% - 375px);
   }
