@@ -1,17 +1,21 @@
+import { useContext } from 'react'
+import FetchContext from '../../context/FetchContext'
 import Link from "next/link"
 import styles from "../../styles/components/global/Button.module.css"
 
-const Button = ({label}) => {
+const Button = ({label, onClick}) => {
   return (
-    <button className={styles.button}>
+    <button className={styles.button} onClick={onClick}>
       {label}
     </button>
   )
 }
 
 export const LinkButton = ({label, href}) => {
+  const fetchParams = useContext(FetchContext);
+  
   return (
-    <Link href={href}>
+    <Link href={{pathname:href, query:fetchParams}}>
       <a className={styles.button}>
         {label}
       </a>

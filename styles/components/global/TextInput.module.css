@@ -23,4 +23,5 @@
 .input:focus {
   border-radius: 6px;
   border: 3px solid #FF9B33;
+  outline: none;
 } 

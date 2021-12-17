@@ -37,6 +37,10 @@ body {
   display: none;
 }
 
+.notVisible {
+  opacity: 0;
+}
+
 .visible {
   display: inline;
 }
