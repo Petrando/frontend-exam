@@ -62,7 +62,7 @@ const Search = () => {
 
           {
             searchData.length > 0 && 
-            <Grid container spacing={width>414?3:1}>
+            <Grid container spacing={3}>
               {
                 searchData.map((d, i) => <SearchCard data={d} key={i} idx={i} /> )
               }

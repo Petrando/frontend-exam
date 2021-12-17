@@ -40,6 +40,10 @@
 
 @media screen and (max-width:414px) {
   .card {
-    height: 334.03px;
+    height: 282px;
+  }
+
+  .cardTitle {
+    margin:20.33px 0px 0px;
   }
 }
