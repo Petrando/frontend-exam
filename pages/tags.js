@@ -19,6 +19,7 @@ const Tags = () => {
   }, [])
 
   const fetchData = async () => {
+    setLoading(true)
     await fetch(`https://avl-frontend-exam.herokuapp.com/api/tags?page=${page}&pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`)
       .then((res) => res.json())
       .then((json) => {

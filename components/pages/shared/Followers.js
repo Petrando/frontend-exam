@@ -1,34 +1,71 @@
 import {useEffect, useState} from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { SmallButton } from '../../global/Button';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Loading from "../../global/Loading"
 import styles from "../../../styles/components/pages/shared/Followers.module.css";
 
 const Followers = () => {
   const [activeTab, setActiveTab] = useState("Followers");
   const Tabs = [
-                {label:"Followers", link:"https://avl-frontend-exam.herokuapp.com/api/users/all?page=1&pageSize=10"},
-                {label:"Following", link:"https://avl-frontend-exam.herokuapp.com/api/users/friends?page=1&pageSize=10"}
+                {label:"Followers", link:"https://avl-frontend-exam.herokuapp.com/api/users/all"},
+                {label:"Following", link:"https://avl-frontend-exam.herokuapp.com/api/users/friends"}
               ]
+  
+  const tabIdx = Tabs.findIndex(tab => tab.label === activeTab);
+  const { link } = Tabs[tabIdx];
+
   const [followers, setFollowers] = useState([])
-  const currentPage = 1;
+  const [page, setPage] = useState(1)  
+  const [isLoading, setLoading] = useState(true);
+  const [isMaxPage, setIsMax] = useState(false);
+
+  const router = useRouter()
+  const {query:{pageSize, keyword}} = router;
+  const queryParams = `?page=${page}&pageSize=${pageSize?pageSize:15}`
   
   useEffect(()=>{
-    getData();
+    initTabCondition();
   }, [activeTab]);
-  
-  const getData = () => {
-    const tabIdx = Tabs.findIndex(tab => tab.label === activeTab);
-    const { link } = Tabs[tabIdx];
 
-    fetch(link)
+  const initTabCondition =  () => {
+    setFollowers([])
+    setPage(1)
+    setIsMax(false)
+  }
+
+  useEffect(()=>{
+    if(followers.length === 0 && page === 1 && !isMaxPage){
+      fetchData();
+    }
+  }, [followers.length, page, isMaxPage])
+  
+  const fetchData = async () => { 
+    setLoading(true);
+    await fetch(link + queryParams)
       .then((res) => res.json())
       .then((json) => {
         console.log(json)
-        setFollowers(json.data);
+        if(json.data.length > 0){
+          if(page===1 || followers.length === 0)//page===1 or followers is empty means tab was switched...
+          {
+            setFollowers(json.data);
+          }else{
+            setFollowers(followers.concat(json.data))
+          }
+          
+        }else {
+          setIsMax(true)
+        }
+        
       })
       .catch(err=>{
         console.log(err)
       })
+
+    setLoading(false);
+    setPage(page + 1)
   }
 
   return (
@@ -49,7 +86,18 @@ const Followers = () => {
       </div>
       {
           followers.length  > 0 &&
-          <div className={styles.followersContainer}>
+          <InfiniteScroll
+              className={styles.followersContainer}
+              dataLength={followers.length} //This is important field to render the next data
+              next={fetchData}
+              hasMore={!isMaxPage}
+              loader={<Loading />}
+              endMessage={
+                <p style={{ textAlign: 'center' }}>
+                  <b>All {activeTab==="Followers"?"followers":"following"} loaded</b>
+                </p>
+              }
+            >
             {
                 followers.map((follower, i) => 
                                               <div key={i} className={styles.follower}>
@@ -79,7 +127,7 @@ const Followers = () => {
                                               </div>
                 )
             }
-          </div>
+          </InfiniteScroll>
         }
     </div>
   )
