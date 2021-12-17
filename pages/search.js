@@ -8,6 +8,7 @@ import WithFollowersLayout from "../components/layout/WithFollowersLayout";
 import Button from '../components/global/Button';
 import SearchCard from '../components/pages/search/SearchCard';
 import Loading from '../components/global/Loading';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import styles from "../styles/components/pages/search/Search.module.css"
 
 const Search = () => {
@@ -18,6 +19,8 @@ const Search = () => {
 
   const router = useRouter()
   const {pageSize, keyword} = router.query;
+
+  const { width } = useWindowDimensions();
 
   useEffect(()=>{
      fetchData();
@@ -59,7 +62,7 @@ const Search = () => {
 
           {
             searchData.length > 0 && 
-            <Grid container spacing={3}>
+            <Grid container spacing={width>414?3:1}>
               {
                 searchData.map((d, i) => <SearchCard data={d} key={i} idx={i} /> )
               }
