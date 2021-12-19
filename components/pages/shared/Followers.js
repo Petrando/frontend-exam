@@ -69,7 +69,7 @@ const Followers = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <aside className={styles.container}>
       <div className={styles.tabs}>
         {
           Tabs.map((tab, i)=>(  
@@ -129,7 +129,7 @@ const Followers = () => {
             }
           </InfiniteScroll>
         }
-    </div>
+    </aside>
   )
 }
 

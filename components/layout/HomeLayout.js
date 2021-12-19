@@ -1,17 +1,22 @@
 import Navbar from "./Navbar";
 import WithFollowersLayout from "./WithFollowersLayout";
+import { ThemeProvider } from '@mui/material/styles';
+import { Box } from "@mui/material";
+import theme from "../../styles/global"
 import styles from "../../styles/components/layout/HomeLayout.module.css";
 
 const HomeLayout = ({children}) => {
   return (
-    <div className={styles.container}>
+    <ThemeProvider theme={theme}>
+    <Box sx={{display:'flex', justifyContent:'center', alignItems:'stretch'}}>
       <Navbar />
-      <div className={styles.main}>
+      <main className={styles.main}>
         <WithFollowersLayout>
           {children}
         </WithFollowersLayout>
-      </div>
-    </div>
+      </main>
+    </Box>
+    </ThemeProvider>
   )
 }
 

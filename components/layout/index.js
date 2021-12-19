@@ -1,6 +1,9 @@
+import { ThemeProvider } from '@mui/material/styles';
+import { Box } from "@mui/material";
 import Navbar from "./Navbar";
 import BackToHome from "../pages/shared/BackToHome";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import theme from "../../styles/global"
 import styles from "../../styles/components/layout/Layout.module.css"
 
 const Layout = ({children}) => {
@@ -12,12 +15,12 @@ const Layout = ({children}) => {
     <>
     {
       width > 0 &&
-      <div className={styles.container}>
+      <Box sx={{display:['block', 'flex', null], justifyContent:'flex-start', alignItems:'stretch'}}>
         {navElement}
-        <div className={styles.main}>
+        <main className={styles.main}>
           {children}
-        </div>
-      </div>
+        </main>
+      </Box>
     }
     </> 
 
