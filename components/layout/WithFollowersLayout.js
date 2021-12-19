@@ -7,12 +7,12 @@ import {sxStyles, boxShadowStyles} from "../../styles/components/layout/WithFoll
 const WithFollowersLayout = ({children}) => {
   const {width} = useWindowDimensions()
   return (
-    <Box sx={sxStyles}>
+    <Box className={styles.container}>
       <main className={styles.main}>
         {children}
         {
           width >= 1440 &&
-          <Box sx={boxShadowStyles} />
+          <Box className={styles.followersShade} />
         }        
       </main>
       {

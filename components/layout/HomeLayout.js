@@ -8,9 +8,8 @@ import {sxStyles} from "../../styles/components/layout/HomeLayout.module.js"
 
 const HomeLayout = ({children}) => {
 
-  return (
-    <ThemeProvider theme={theme}>
-    <Box sx={sxStyles}>
+  return (    
+    <Box className={styles.container}>
       <Navbar />
       <main className={styles.main}>
         <WithFollowersLayout>
@@ -18,7 +17,6 @@ const HomeLayout = ({children}) => {
         </WithFollowersLayout>
       </main>
     </Box>
-    </ThemeProvider>
   )
 }
 
