@@ -4,11 +4,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Box } from "@mui/material";
 import theme from "../../styles/global"
 import styles from "../../styles/components/layout/HomeLayout.module.css";
+import {sxStyles} from "../../styles/components/layout/HomeLayout.module.js"
 
 const HomeLayout = ({children}) => {
+
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{display:'flex', justifyContent:'center', alignItems:'stretch'}}>
+    <Box sx={sxStyles}>
       <Navbar />
       <main className={styles.main}>
         <WithFollowersLayout>

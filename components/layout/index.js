@@ -1,10 +1,9 @@
-import { ThemeProvider } from '@mui/material/styles';
 import { Box } from "@mui/material";
 import Navbar from "./Navbar";
 import BackToHome from "../pages/shared/BackToHome";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import theme from "../../styles/global"
 import styles from "../../styles/components/layout/Layout.module.css"
+import { sxStyles} from "../../styles/components/layout/Layout.module.js"
 
 const Layout = ({children}) => {
   const {width} = useWindowDimensions();
@@ -15,12 +14,14 @@ const Layout = ({children}) => {
     <>
     {
       width > 0 &&
-      <Box sx={{display:['block', 'flex', null], justifyContent:'flex-start', alignItems:'stretch'}}>
-        {navElement}
-        <main className={styles.main}>
-          {children}
-        </main>
-      </Box>
+      
+        <Box sx={sxStyles}>
+          {navElement}
+          <main className={styles.main}>
+            {children}
+          </main>
+        </Box>
+      
     }
     </> 
 
