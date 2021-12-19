@@ -15,7 +15,7 @@ const Layout = ({children}) => {
     {
       width > 0 &&
       
-        <Box sx={sxStyles}>
+        <Box className={styles.container}>
           {navElement}
           <main className={styles.main}>
             {children}
