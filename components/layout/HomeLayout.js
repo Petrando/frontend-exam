@@ -9,6 +9,16 @@ import {sxStyles} from "../../styles/components/layout/HomeLayout.module.js"
 const HomeLayout = ({children}) => {
 
   return (    
+    <ThemeProvider theme={theme}>
+      <LayoutContent>
+        {children}
+      </LayoutContent>
+    </ThemeProvider>
+  )
+}
+
+const LayoutContent = ({children}) => {
+  return (
     <Box className={styles.container}>
       <Navbar />
       <main className={styles.main}>

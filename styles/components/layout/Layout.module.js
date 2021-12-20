@@ -1,9 +1,10 @@
-import { createStyles, makeStyles } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(createStyles({
+export const useStyles = makeStyles(theme=>({
   container:{
-    display:['block', 'flex', null], justifyContent:'flex-start', alignItems:'stretch'
+    display:'flex', justifyContent:'flex-start', alignItems:'stretch',
+    [theme.breakpoints.down('aboveMobile')]:{
+      display:'block',      
+    }
   }
 }))
-
-export const sxStyles = {display:['block', 'flex', null], justifyContent:'flex-start', alignItems:'stretch'}
