@@ -1,34 +1,17 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import { Box, Grid, ThemeProvider } from '@mui/material/'
+import { Grid } from '@mui/material/'
 import Action from "../components/svg-shapes/Action"
 import Layout from "../components/layout";
 import WithFollowersLayout from "../components/layout/WithFollowersLayout";
 import Button from '../components/global/Button';
 import SearchCard from '../components/pages/search/SearchCard';
 import Loading from '../components/global/Loading';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import styles from "../styles/components/pages/search/Search.module.css"
-import theme, {useGlobalStyles} from '../styles/global';
-import {useStyles} from "../styles/components/pages/search/Search.module.js"
 
 const Search = () => {
-
-  return (
-    <Layout>
-      <WithFollowersLayout>
-        <ThemeProvider theme={theme}>
-          <SearchContent />
-        </ThemeProvider>
-      </WithFollowersLayout>
-    </Layout>
-  )
-}
-
-const SearchContent = () => {
-  const classes = useStyles()
-  const globalClasses = useGlobalStyles()
-
   const [searchData, setData] = useState([])
   const [page, setPage] = useState(1)  
   const [isLoading, setLoading] = useState(true);
@@ -37,8 +20,11 @@ const SearchContent = () => {
   const router = useRouter()
   const {pageSize, keyword} = router.query;
 
+  const { width } = useWindowDimensions();
+
   useEffect(()=>{
      fetchData();
+     console.log(page)
   }, [page])
 
   const fetchData = async () => {    
@@ -59,14 +45,16 @@ const SearchContent = () => {
 
     setLoading(false)
   }
-  
+  console.log(router.query)
 
   return (
-    <Box className={`${globalClasses.pageContentContainer} ${classes.container}`}>
-          <h2 className={classes.pageTitle}>
+    <Layout>
+      <WithFollowersLayout>
+        <div className={`pageContentContainer ${styles.container}`}>
+          <h2 className={styles.pageTitle}>
             Results
             <Link href={"/"}>
-              <a className={classes.action}>
+              <a className={styles.action}>
                 <Action />
               </a>
             </Link>
@@ -74,18 +62,20 @@ const SearchContent = () => {
 
           {
             searchData.length > 0 && 
-            <Box className={classes.grid}>
+            <Grid container spacing={3}>
               {
                 searchData.map((d, i) => <SearchCard data={d} key={i} idx={i} /> )
               }
-            </Box>
+            </Grid>
           }
           {
             isLoading?
             <Loading />:
             <Button label={`${!isMaxPage?'MORE':'MAX PAGE'}`} 
                     onClick={()=>{
-                                  if(!isMaxPage){                              
+                                  console.log('button clicked')
+                                  if(!isMaxPage){
+                                    console.log('...next page')
                                     setLoading(true)
                                     setPage(page+1)
                                   }
@@ -93,7 +83,10 @@ const SearchContent = () => {
             />  
           }
           
-        </Box>)
+        </div>
+      </WithFollowersLayout>
+    </Layout>
+  )
 }
 
 export default Search;

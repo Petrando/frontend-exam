@@ -1,41 +1,26 @@
-import { Box, ThemeProvider } from "@mui/material";
-import theme from "../../styles/global";
 import Navbar from "./Navbar";
 import BackToHome from "../pages/shared/BackToHome";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import styles from "../../styles/components/layout/Layout.module.css"
-import { useStyles} from "../../styles/components/layout/Layout.module.js"
 
 const Layout = ({children}) => {
   const {width} = useWindowDimensions();
+
+  const navElement =  width > 414?<Navbar />:<BackToHome />
 
   return (
     <>
     {
       width > 0 &&
-      <ThemeProvider theme={theme}>
-        <LayoutContent width={width}>
+      <div className={styles.container}>
+        {navElement}
+        <div className={styles.main}>
           {children}
-        </LayoutContent>
-      </ThemeProvider>
+        </div>
+      </div>
     }
     </> 
 
-  )
-}
-
-const LayoutContent = ({children, width}) => {
-  const classes = useStyles();
-
-  const navElement =  width > 414?<Navbar />:<BackToHome />
-
-  return (
-    <Box className={classes.container}>
-      {navElement}
-      <main className={styles.main}>
-        {children}
-      </main>
-    </Box>
   )
 }
 
