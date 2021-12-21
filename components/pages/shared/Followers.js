@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import { useRouter } from 'next/router'
+import {Box} from '@mui/material'
 import Image from 'next/image'
 import { SmallButton } from '../../global/Button';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -69,21 +70,21 @@ const Followers = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.tabs}>
+    <Box className={styles.container}>
+      <Box className={styles.tabs}>
         {
           Tabs.map((tab, i)=>(  
-                              <div 
+                              <Box 
                                 className={`${styles.tabLabel} ${tab.label!==activeTab && styles.inactive}`} 
                                 key={i}
                                 onClick={()=>{setActiveTab(tab.label)}}
                               >
                                 {tab.label}
-                              </div>
+                              </Box>
                   ))
         }
-        <div className={`${styles.activeLine} ${activeTab==='Followers'?styles.followersActive:styles.followingActive}`} />
-      </div>
+        <Box className={`${styles.activeLine} ${activeTab==='Followers'?styles.followersActive:styles.followingActive}`} />
+      </Box>
       {
           followers.length  > 0 &&
           <InfiniteScroll
@@ -100,36 +101,36 @@ const Followers = () => {
             >
             {
                 followers.map((follower, i) => 
-                                              <div key={i} className={styles.follower}>
-                                                <div className={styles.data}>
-                                                  <div className={styles.followerImg}>  
+                                              <Box key={i} className={styles.follower}>
+                                                <Box className={styles.data}>
+                                                  <Box className={styles.followerImg}>  
                                                     <Image 
                                                       src={`/images/follower${i<=7?i+1:8}.png`} 
                                                       width={40} 
                                                       height={40} 
                                                       alt={follower.name}
                                                     />
-                                                  </div>
-                                                  <div className={styles.followerAbout}>                                                    
+                                                  </Box>
+                                                  <Box className={styles.followerAbout}>                                                    
                                                     <p className={styles.fullname}>
                                                       {follower.name}
                                                     </p>
                                                     <p className={styles.username}>
                                                       {follower.username}
                                                     </p>
-                                                  </div>
-                                                </div>
-                                                <div className={styles.button}>
+                                                  </Box>
+                                                </Box>
+                                                <Box className={styles.button}>
                                                   <SmallButton label={follower.isFollowing?'Following':'Follow'}
                                                                variant={follower.isFollowing?'contained':'outline'}
                                                   />
-                                                </div>
-                                              </div>
+                                                </Box>
+                                              </Box>
                 )
             }
           </InfiniteScroll>
         }
-    </div>
+    </Box>
   )
 }
 
