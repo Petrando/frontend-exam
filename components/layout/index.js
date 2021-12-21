@@ -1,3 +1,4 @@
+import {Box} from '@mui/material'
 import Navbar from "./Navbar";
 import BackToHome from "../pages/shared/BackToHome";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
@@ -12,12 +13,12 @@ const Layout = ({children}) => {
     <>
     {
       width > 0 &&
-      <div className={styles.container}>
+      <Box className={styles.container}>
         {navElement}
-        <div className={styles.main}>
+        <Box className={styles.main}>
           {children}
-        </div>
-      </div>
+        </Box>
+      </Box>
     }
     </> 
 

@@ -1,3 +1,4 @@
+import {Box} from '@mui/material'
 import Followers from "../pages/shared/Followers";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import styles from "../../styles/components/layout/WithFollowers.module.css";
@@ -5,7 +6,7 @@ import styles from "../../styles/components/layout/WithFollowers.module.css";
 const WithFollowersLayout = ({children}) => {
   const {width} = useWindowDimensions()
   return (
-    <div className={styles.container}>
+    <Box className={styles.container}>
       <main className={styles.main}>
         {children}
         <div className={styles.followersShade} />
@@ -14,7 +15,7 @@ const WithFollowersLayout = ({children}) => {
         width >= 1440 &&
         <Followers />
       }      
-    </div>
+    </Box>
   )
 }
 

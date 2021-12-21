@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import { Grid } from '@mui/material/'
+import { Box, Grid } from '@mui/material/'
 import Action from "../components/svg-shapes/Action"
 import Layout from "../components/layout";
 import WithFollowersLayout from "../components/layout/WithFollowersLayout";
@@ -50,7 +50,7 @@ const Search = () => {
   return (
     <Layout>
       <WithFollowersLayout>
-        <div className={`pageContentContainer ${styles.container}`}>
+        <Box className={`pageContentContainer ${styles.container}`}>
           <h2 className={styles.pageTitle}>
             Results
             <Link href={"/"}>
@@ -83,7 +83,7 @@ const Search = () => {
             />  
           }
           
-        </div>
+        </Box>
       </WithFollowersLayout>
     </Layout>
   )
