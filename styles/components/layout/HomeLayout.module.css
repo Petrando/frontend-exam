@@ -13,10 +13,12 @@
 @media screen and (max-width:414px) {
   .container {
     max-height: 100vh;
+    flex-direction: column-reverse;
   }
 
   .main {
     width: 100%;
-    height: calc(100vh - 66px);
+    max-height: calc(100vh - 66px);
+    flex:1 1 calc(100vh - 66px);
   }
 }
