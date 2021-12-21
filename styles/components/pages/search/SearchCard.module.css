@@ -39,7 +39,7 @@
   color: #B2B2B2;
 }
 
-@media screen and (max-width:414px) {
+@media screen and (max-width:540px) {/*Free styling for better looks at certain breakpoints*/
   .card {
     height: 282px;
     width:100%;
@@ -55,10 +55,14 @@
   }
 }
 
-@media screen and (min-width:415px) and (max-width:768px) {
+@media screen and (min-width:541px) and (max-width:768px) {
   .card {
     width:calc(50% - 17px);
     height:auto;/*just pick some numbers...*/
     margin:0px 0px 30px;
+  }
+
+  .cardContent {
+    margin:0px 0px auto;
   }
 }

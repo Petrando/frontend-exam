@@ -5,7 +5,7 @@ import styles from "../../../styles/components/pages/shared/BackToHome.module.cs
 
 const BackToHome = () => {
   const router = useRouter()
-  console.log(router.query)
+  
   return (
     <Link href={{pathname:"/", query:router.query}}>
       <a className={styles.container}>
