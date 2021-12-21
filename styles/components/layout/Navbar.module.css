@@ -52,10 +52,18 @@
 }
 
 .logo {
+  width: auto;
+  height: auto;
+  padding: 0px;
+  margin:0px;
   position: absolute;
   left: 23px;
   top:37px;
   z-index: 1000;
+}
+
+.logoNotAtNavbar {
+  display: none;
 }
 
 @media screen and (max-width:414px) {
@@ -73,9 +81,19 @@
   }
 
   .logo {
-    position: fixed;
+    /*position: fixed;
     left:21px;
-    top: 3.44827586206897vh;
+    top: 3.44827586206897vh;*/
+    display: none;
+    opacity: 0;
+  }
+
+  .logoNotAtNavbar {
+    height:8.62068965517241vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
   }
 
   .menuItemContainer {

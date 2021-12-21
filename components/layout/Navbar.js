@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import Link from "next/link"
 import { useRouter } from "next/router";
 import {Box} from '@mui/material'
@@ -19,7 +19,9 @@ const Navbar = () => {
   return (
     <>    
     <nav className={styles.navbar}>
-    <NavLogo />
+      {
+        width>414 && <NavLogo atNavbar={true} />
+      }    
       {
         NavMenu.map(d => <NavMenuItem menuData={d} key={d.label} asPath={asPath} width={width} />)
       }

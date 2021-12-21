@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import { useRouter } from 'next/router';
 import {Box} from '@mui/material'
 import HomeLayout from '../components/layout/HomeLayout'
+import NavLogo from '../components/svg-shapes/NavLogo'
 import SearchInput from '../components/pages/home/SearchInput'
 import PerPageSlider from '../components/pages/home/PerPageSlider'
 import GoToSearch from '../components/pages/home/GoToSearch'
@@ -33,6 +34,7 @@ export default function Home() {
     <FetchContext.Provider value={{keyword:searchText, pageSize:itemPerPage}}>
       <HomeLayout>     
         <Box className={`pageContentContainer ${styles.container} `}>
+          <NavLogo atNavbar={false} />
           <SearchInput searchText={searchText} setSearchText={setSearchText} />
           <PerPageSlider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} count={count} />
           <GoToSearch />            

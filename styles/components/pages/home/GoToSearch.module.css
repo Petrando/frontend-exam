@@ -18,7 +18,7 @@ total mobile height: 812px
 
 @media screen and (max-width:414px) {
   .container {
-    height: 25.86206896551724vh;
+    height: 25.86206896551724vh !important;
     padding-top:0px;
     display: flex;
     flex-direction: column;

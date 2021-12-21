@@ -20,14 +20,6 @@
 .container * {
   margin-bottom: 2.22222222222222vh;
 }
-/*
-.container *:not(:first-child){
-  margin-top: 0px;
-}
-
-.container *:last-child {
-   margin: 0px;
-}*/
 
 .resultCount {
   height:50px;
@@ -70,6 +62,6 @@ total mobile height: 812px
 
 @media screen and (max-width:414px) {
   .container {
-    height: calc(51.72413793103448vh - 0.25px);
+    height: calc(51.72413793103448vh - 0.25px) !important;
   }
 }

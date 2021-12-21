@@ -8,7 +8,11 @@
   border-bottom: 0.25px solid rgba(255, 255, 255, 0.1);
 }
 
-.container h4 {
+.logo {
+  
+}
+
+.sectionTitle {
   margin-bottom: 2.22222222222222vh;
   padding:0px;
   font-style: normal;
@@ -28,7 +32,7 @@
     justify-content: flex-start;    
   }
 
-  .container h4 {
+  .sectionTitle {
     margin-top: 6vh;
   }
 }
@@ -40,12 +44,15 @@ total mobile height: 812px
 
 @media screen and (max-width:414px) {
   .container {
-    height:22.41379310344828vh;
+    height:calc(22.41379310344828vh - 8.62068965517241vh) !important;
     justify-content: flex-end;
     border-bottom: 0px solid transparent;
   }
 
-  .container h4{
+  .logo {
+    display: block;
+  }
+  .sectionTitle{
     margin-bottom: 1.97044334975369vh;
   }
 }

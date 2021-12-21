@@ -5,7 +5,8 @@ import styles from "../../../styles/components/pages/home/SearchInput.module.css
 const SearchInput = ({searchText, setSearchText}) => {
   return (
     <Box className={styles.container}>
-      <h4>Search</h4>
+      
+      <h4 className={styles.sectionTitle}>Search</h4>
       <TextInput searchText={searchText} setSearchText={setSearchText} />
     </Box>
   )
