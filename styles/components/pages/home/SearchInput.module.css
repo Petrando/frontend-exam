@@ -4,12 +4,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   border-bottom: 0.25px solid rgba(255, 255, 255, 0.1);
-}
-
-.logo {
-  
 }
 
 .sectionTitle {
@@ -49,9 +45,6 @@ total mobile height: 812px
     border-bottom: 0px solid transparent;
   }
 
-  .logo {
-    display: block;
-  }
   .sectionTitle{
     margin-bottom: 1.97044334975369vh;
   }
