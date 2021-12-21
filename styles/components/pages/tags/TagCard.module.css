@@ -54,19 +54,19 @@
   }
 }
 
-@media screen and (min-width:321px) and (max-width:414px) {
+@media screen and (min-width:321px) and (max-width:768px) {
   .card {
     width: calc(50% - 3.2vw);
   }
 }
 
-@media screen and (min-width:415px) and (max-width:845px) {
+@media screen and (min-width:769px) and (max-width:1024px) {
   .card {
     width: calc((100%/3) - 12px);
   }
 }
 
-@media screen and (min-width:846px) and (max-width:1439px) {
+@media screen and (min-width:1025px) and (max-width:1439px) {
   .card {
     width: calc(25% - 24px);
   }

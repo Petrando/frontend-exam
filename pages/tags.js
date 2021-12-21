@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import {Box} from '@mui/material'
 import Layout from "../components/layout";
 import TagCard from "../components/pages/tags/TagCard";
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -40,7 +41,7 @@ const Tags = () => {
 
   return (
     <Layout>
-      <div className={`pageContentContainer ${styles.container}`}>
+      <Box className={`pageContentContainer ${styles.container}`}>
         <h3 className={styles.pageTitle}>Tags</h3>
         {
           tagsData.length > 0 &&
@@ -65,7 +66,7 @@ const Tags = () => {
             </InfiniteScroll>
 
         }
-      </div>
+      </Box>
     </Layout>
   )
 }
