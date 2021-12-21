@@ -64,6 +64,6 @@ total mobile height: 812px
 @media screen and (max-width:414px) {
   .container {
     /*height: calc(51.72413793103448vh - 0.25px) !important;*/
-    flex:1 1 51.72413793103448vh;
+    flex:1 2 51.72413793103448vh;
   }
 }
