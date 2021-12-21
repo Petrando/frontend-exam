@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import Link from "next/link"
 import { useRouter } from "next/router";
+import {Box} from '@mui/material'
 import MenuIcon from "../svg-shapes/MenuIcon";
 import NavLogo from "../svg-shapes/NavLogo";
 import BlueDot from "../svg-shapes/BlueDot";
@@ -39,12 +40,12 @@ const NavMenuItem = ({menuData : {label, path}, asPath, width}) => {
   return (
     <Link href={{pathname:path, query:fetchParams}}>
       <a className={styles.menuItemContainer}>
-        <div className={styles.iconContainer}>
+        <Box className={styles.iconContainer}>
           <MenuIcon isActive={isActive}/>
-          <div className={`${styles.blueDot} ${!showBlueDot&&'hidden'}`}>
+          <Box className={`${styles.blueDot} ${!showBlueDot&&'hidden'}`}>
             <BlueDot />
-          </div>
-        </div>                  
+          </Box>
+        </Box>                  
         {
           isActive &&
           <p className={styles.menuLabel}>
