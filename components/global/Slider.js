@@ -44,7 +44,7 @@ const MySlider = ({ setItemPerPage}) => {
       trackStyle={{borderRadius:'20px', height:'5px', backgroundImage:'linear-gradient(to right, #FF5C01, #FFD25F)'}}
       railStyle={{borderRadius:'20px', height:'5px'}}
       handleStyle={{width:'20px', height:'20px', background:'#1B1B1B', border:'6px solid #FFD05D'}}
-      activeDotStyle={{color:'#FFFFFF'}}
+      activeDotStyle={{color:'rgb(255, 0, 0)'}}
     />
   )
 }

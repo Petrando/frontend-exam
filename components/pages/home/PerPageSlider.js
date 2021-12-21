@@ -6,7 +6,7 @@ import Slider from "../../global/Slider"
 const PerPageSlider = ({itemPerPage, setItemPerPage, count}) => {
   return (
     <Box className={styles.container}>
-      <h4>{itemPerPage} Of Results Per Page</h4>
+      <h4 className={styles.sectionTitle}>{itemPerPage} Of Results Per Page</h4>
       <Box className={styles.resultCount}>
         <span className={styles.countNumber}>{count}</span>{" "}<span className={styles.result}>results</span>
       </Box>
