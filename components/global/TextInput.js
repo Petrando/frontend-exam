@@ -10,14 +10,4 @@ const TextInput = ({label, inputId, searchText, setSearchText}) => {
   )
 }
 
-/*
-<div className={styles.inputContainer}>
-      <label htmlFor={inputId}>
-        {label}
-      </label>
-      <input type="text" placeholder="text" className={styles.input}>
-
-      </input>
-    </div>
-    */
 export default TextInput;
