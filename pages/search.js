@@ -62,11 +62,11 @@ const Search = () => {
 
           {
             searchData.length > 0 && 
-            <Grid container spacing={3}>
+            <Box className={styles.grid}>
               {
                 searchData.map((d, i) => <SearchCard data={d} key={i} idx={i} /> )
               }
-            </Grid>
+            </Box>
           }
           {
             isLoading?

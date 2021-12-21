@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: calc((100% / 3) - 17px);
   height: 197px;
-  width: 100%;
+  margin:0px 0px 15.5px;
   border-radius: 0px;
 }
 
@@ -41,9 +42,23 @@
 @media screen and (max-width:414px) {
   .card {
     height: 282px;
+    width:100%;
+    margin:0px 0px 10px;
+  }
+
+  .cardContent {
+    margin:0px 0px auto;
   }
 
   .cardTitle {
     margin:20.33px 0px 0px;
+  }
+}
+
+@media screen and (min-width:415px) and (max-width:768px) {
+  .card {
+    width:calc(50% - 17px);
+    height:auto;/*just pick some numbers...*/
+    margin:0px 0px 30px;
   }
 }
