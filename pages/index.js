@@ -37,9 +37,16 @@ export default function Home() {
           <NavLogo atNavbar={false} />
           <SearchInput searchText={searchText} setSearchText={setSearchText} />
           <PerPageSlider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} count={count} />
-          <GoToSearch />            
+          <GoToSearch />                     
         </Box> 
       </HomeLayout>
     </FetchContext.Provider>
   )
 }
+
+/*
+<div className={styles.dummyLogo} />
+          <div className={styles.dummySearch} />
+          <div className={styles.dummySlider} />
+          <div className={styles.dummyGoTo} />
+*/

@@ -1,5 +1,6 @@
 .container {
-  height:calc(22.22222222222222vh - 0.25px);/*figma height : 200px*/
+  flex:1 1 calc(22.22222222222222vh - 0.25px);
+  /*height:calc(22.22222222222222vh - 0.25px);figma height : 200px*/
   /*background-color: chocolate;*/
   display: flex;
   flex-direction: column;
@@ -40,7 +41,8 @@ total mobile height: 812px
 
 @media screen and (max-width:414px) {
   .container {
-    height:calc(22.41379310344828vh - 8.62068965517241vh) !important;
+    /*height:calc(22.41379310344828vh - 8.62068965517241vh) !important;*/
+    flex: 1 1 calc(22.41379310344828vh - 8.62068965517241vh);
     justify-content: flex-end;
     border-bottom: 0px solid transparent;
   }

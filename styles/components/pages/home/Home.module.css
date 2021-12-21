@@ -2,6 +2,8 @@
   max-height: 100vh !important;
   padding-top: 0px;
   /*overflow: hidden;*/
+  display: flex;
+  flex-direction: column;
 }
 
 .sectionTitle{
@@ -10,4 +12,42 @@
   font-size: 24px;
   line-height: 150%;
   margin-top: 0px;
+}
+
+.dummyLogo {
+  flex:1 3 0px;
+  background-color: darkgray;
+}
+
+.dummySearch {
+  flex:1 1 calc(22.22222222222222vh - 0.25px);
+  background-color: darkkhaki;
+}
+
+.dummySlider {
+  flex:1 1 26.44444444444444vh;
+  background-color: darksalmon;
+}
+
+.dummyGoTo {
+  flex:1 1 51.33333333333333vh;
+  background-color: deeppink;
+}
+
+@media screen and (max-width:414px) {
+  .dummyLogo {
+    flex:1 3 8.62068965517241vh;
+  }
+
+  .dummySearch {
+    flex: 1 1 calc(22.41379310344828vh - 8.62068965517241vh);
+  }
+
+  .dummySlider {
+    flex:1 1 51.72413793103448vh;
+  }
+
+  .dummyGoTo {
+    flex:1 1 25.86206896551724vh;
+  }
 }

@@ -1,6 +1,7 @@
 .container {
   width: 100%;
-  height: calc(26.44444444444444vh - 0.25px);/*figma height : 238px*/
+  flex:1 1 26.44444444444444vh;
+  /*height: calc(26.44444444444444vh - 0.25px);/*figma height : 238px*/
   /*background-color: darkcyan;*/
   display: flex;
   flex-direction: column;
@@ -62,6 +63,7 @@ total mobile height: 812px
 
 @media screen and (max-width:414px) {
   .container {
-    height: calc(51.72413793103448vh - 0.25px) !important;
+    /*height: calc(51.72413793103448vh - 0.25px) !important;*/
+    flex:1 1 51.72413793103448vh;
   }
 }
