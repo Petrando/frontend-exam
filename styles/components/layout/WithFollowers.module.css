@@ -28,6 +28,10 @@
     max-height: calc(100vh - 66px);
     overflow: hidden;
   }  
+
+  .main {
+    max-height: calc(100vh - 66px);
+  }
 }
 
 @media screen and (min-width:1440px) {/*change this into 1440px later...*/  
