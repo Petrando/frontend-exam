@@ -86,6 +86,9 @@ const Followers = () => {
         <Box className={`${styles.activeLine} ${activeTab==='Followers'?styles.followersActive:styles.followingActive}`} />
       </Box>
       {
+        followers.length === 0 && isLoading && <Loading />
+      }
+      {
           followers.length  > 0 &&
           <InfiniteScroll
               className={styles.followersContainer}
