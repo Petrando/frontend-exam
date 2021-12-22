@@ -43,10 +43,3 @@ export default function Home() {
     </FetchContext.Provider>
   )
 }
-
-/*
-<div className={styles.dummyLogo} />
-          <div className={styles.dummySearch} />
-          <div className={styles.dummySlider} />
-          <div className={styles.dummyGoTo} />
-*/
