@@ -49,7 +49,7 @@ const Search = () => {
 
   return (
     <Layout>
-      <WithFollowersLayout>
+      <WithFollowersLayout atHome={false}>
         <Box className={`pageContentContainer ${styles.container}`}>
           <h2 className={styles.pageTitle}>
             Results

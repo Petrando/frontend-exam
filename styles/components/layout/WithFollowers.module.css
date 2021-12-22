@@ -21,10 +21,13 @@
   height:100%;
 }
 
-@media screen and (min-width:1440px) {/*change this into 1440px later...*/
-  .container {
-    flex:1 1 auto;
-  }
+@media screen and (max-width:414px) {
+  .containerAtHome {
+    flex:1 1 calc(100vh - 66px);
+  }  
+}
+
+@media screen and (min-width:1440px) {/*change this into 1440px later...*/  
   .main {
     width: calc(100% - 375px);
   }

@@ -8,7 +8,7 @@ const HomeLayout = ({children}) => {
     <Box className={styles.container}>
       <Navbar />
       <Box className={styles.main}>
-        <WithFollowersLayout>
+        <WithFollowersLayout atHome={true}>
           {children}
         </WithFollowersLayout>
       </Box>
@@ -16,4 +16,9 @@ const HomeLayout = ({children}) => {
   )
 }
 
+/*
+<div className={styles.dummyChildren}>
+        <h2>Helloooo....</h2>
+      </div>
+      */
 export default HomeLayout;
