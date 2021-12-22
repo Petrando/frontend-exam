@@ -28,8 +28,9 @@ const MySlider = ({ setItemPerPage}) => {
   useEffect(()=>{
     let updatedMarks = {}
     for(let prop in perPageMarks){
-      const style = perPageMarks[prop].style.hasOwnProperty('color')?{...marginTop, color:"#FFFFFF"}:
-                                                       {...marginTop} 
+      let style = perPageMarks[prop].style.hasOwnProperty('color')?{...marginTop, color:"#FFFFFF"}:
+                                                       {...marginTop}       
+
       const label = perPageMarks[prop].label;
       updatedMarks[prop] = {style, label}
     }

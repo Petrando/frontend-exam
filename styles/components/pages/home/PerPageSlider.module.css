@@ -26,37 +26,30 @@
 .resultCount {
   height:50px;
   width: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.15px;
   
-}
-
-.resultCount .countNumber {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  margin-right: 10px;
- 
-}
-
-.resultCount .result {
-  height:48px;
-  width: auto;
-  
-  margin: 0px;
-  padding:0px;
-  /* identical to box height, or 24px */
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: relative;/*hack positioning*/
-  top: 3px;/*hack positioning*/
+  
+  /*line-height: 150%;*/
+  letter-spacing: 0.15px;
+}
+
+.countNumber {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  padding:0px;
+  margin:0px;
+  /*margin-right: 10px;*/
+ 
+}
+
+.result {
+  
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: 10px;
   
 }
 

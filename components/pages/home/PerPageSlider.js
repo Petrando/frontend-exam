@@ -8,7 +8,9 @@ const PerPageSlider = ({itemPerPage, setItemPerPage, count}) => {
     <Box className={styles.container}>
       <h4 className={styles.sectionTitle}>{itemPerPage} Of Results Per Page</h4>
       <Box className={styles.resultCount}>
-        <span className={styles.countNumber}>{count}</span>{" "}<span className={styles.result}>results</span>
+        <h3 className={styles.countNumber}>
+          {count}<span className={styles.result}>results</span>
+        </h3>        
       </Box>
       <Slider setItemPerPage={setItemPerPage} />
     </Box>
