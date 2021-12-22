@@ -11,6 +11,7 @@
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
+  margin-bottom: 23.5px;/*39px figma minus 15.5px card margin bottom*/
 }
 
 .pageTitle {
@@ -40,6 +41,7 @@
   .pageTitle {
     font-size: 24px;
     margin-top:20px;
+    margin-bottom: 24px;
   }
 
   .action {

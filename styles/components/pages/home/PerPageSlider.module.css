@@ -12,10 +12,11 @@
 
 .sectionTitle {
   margin-top: 3.33333333333333vh;
-  padding:0px;
+  padding:6px 0px;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
+  
 }
 
 .container * {
@@ -27,12 +28,13 @@
   width: auto;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.15px;
+  
 }
 
 .resultCount .countNumber {
@@ -40,6 +42,7 @@
   font-weight: bold;
   font-size: 48px;
   margin-right: 10px;
+ 
 }
 
 .resultCount .result {
@@ -54,8 +57,16 @@
   align-items: center;
   position: relative;/*hack positioning*/
   top: 3px;/*hack positioning*/
+  
 }
 
+.slider{
+  padding:0px;
+  margin:0px;
+  width: 100%;
+  height: auto;
+  
+}
 /*
 figma mobile height:202px + 218px = 420
 total mobile height: 812px
@@ -65,5 +76,9 @@ total mobile height: 812px
   .container {
     /*height: calc(51.72413793103448vh - 0.25px) !important;*/
     flex:1 2 51.72413793103448vh;
+  }
+
+  .sectionTitle {
+    padding: 0px;
   }
 }
