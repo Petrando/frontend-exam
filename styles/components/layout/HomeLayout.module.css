@@ -20,5 +20,7 @@
     width: 100%;
     max-height: calc(100vh - 66px);
     flex:1 1 calc(100vh - 66px);
+    display: flex;
+    flex-direction: column;
   }
 }

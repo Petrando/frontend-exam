@@ -9,7 +9,10 @@ const WithFollowersLayout = ({children}) => {
     <Box className={styles.container}>
       <main className={styles.main}>
         {children}
-        <Box className={styles.followersShade} />
+        {
+          width >= 1440 &&
+          <Box className={styles.followersShade} />
+        }
       </main>
       {
         width >= 1440 &&
