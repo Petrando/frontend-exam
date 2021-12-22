@@ -13,7 +13,7 @@
   line-height: 150%;
   margin-top: 0px;
 }
-
+/*
 .dummyLogo {
   flex:1 3 0px;
   background-color: darkgray;
@@ -32,7 +32,7 @@
 .dummyGoTo {
   flex:1 1 51.33333333333333vh;
   background-color: deeppink;
-}
+}*/
 
 @media screen and (max-width:414px) {
   .container{
