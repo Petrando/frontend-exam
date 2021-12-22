@@ -17,6 +17,7 @@
     max-height: -webkit-fill-available;
     max-height: -moz-available;
     max-height: fill-available;
+    max-height: stretch;
     flex-direction: column-reverse;
   }
 
