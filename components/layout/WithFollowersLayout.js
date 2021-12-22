@@ -6,7 +6,7 @@ import styles from "../../styles/components/layout/WithFollowers.module.css";
 const WithFollowersLayout = ({children, atHome}) => {
   const {width} = useWindowDimensions()
   return (
-    <Box className={`${styles.container} ${atHome && styles.containerAtHome}`}>
+    <Box className={styles.container}>
       <main className={styles.main}>
         {children}
         {
