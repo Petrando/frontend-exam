@@ -6,11 +6,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 const MySlider = ({ setItemPerPage}) => {
   const {width, height} = useWindowDimensions()
 
-  const [marginTop, setMarginTop] = useState(
-                                              width > 0 && width <= 414 ? {marginTop:'7px'} :
-                                              width > 414 && height > 640 ? {marginTop:'7px'} :
-                                              {}
-                                            );
+  const [marginTop, setMarginTop] = useState({});
   const [currentValue, setCurrentValue] = useState(5);
   const [perPageMarks, setPageMarks] = useState({
     1: {style:{ ...marginTop}, label:"3"},
