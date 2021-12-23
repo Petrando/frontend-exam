@@ -85,6 +85,7 @@
                       -o-radial-gradient(circle at 70%, rgba(24, 24, 24, 0.2) 10%, rgba(0, 0, 0, 0.8) 35%, transparent 50%);                      
     background-image: radial-gradient(circle at 15%, rgba(24, 24, 24, 0.2) 10%, rgba(0, 0, 0, 0.8) 35%, transparent 45%),
                       radial-gradient(circle at 70%, rgba(24, 24, 24, 0.2) 10%, rgba(0, 0, 0, 0.8) 35%, transparent 50%);
+    overflow: hidden;
   }
 
   .logo {

@@ -73,6 +73,11 @@ total mobile height: 812px
 
   .sectionTitle {
     padding: 0px;
+    margin-top: 4.1871921182266vh;
+  }
+
+  .container * {
+    margin-bottom: 1.97044334975369vh;
   }
 }
 
