@@ -10,8 +10,10 @@ import SearchCard from '../components/pages/search/SearchCard';
 import Loading from '../components/global/Loading';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import styles from "../styles/components/pages/search/Search.module.css"
+import {useStyles} from "../styles/components/pages/search/Search.module"
 
 const Search = () => {
+  const classes = useStyles()
   const [searchData, setData] = useState([])
   const [page, setPage] = useState(1)  
   const [isLoading, setLoading] = useState(true);
@@ -50,11 +52,11 @@ const Search = () => {
   return (
     <Layout>
       <WithFollowersLayout atHome={false}>
-        <Box className={styles.container}>
-          <h2 className={styles.pageTitle}>
+        <Box className={classes.container}>
+          <h2 className={classes.pageTitle}>
             Results
             <Link href={"/"}>
-              <a className={styles.action}>
+              <a className={classes.action}>
                 <Action />
               </a>
             </Link>
@@ -62,7 +64,7 @@ const Search = () => {
 
           {
             searchData.length > 0 && 
-            <Box className={styles.grid}>
+            <Box className={classes.grid}>
               {
                 searchData.map((d, i) => <SearchCard data={d} key={i} idx={i} /> )
               }
@@ -72,10 +74,8 @@ const Search = () => {
             isLoading?
             <Loading />:
             <Button label={`${!isMaxPage?'MORE':'MAX PAGE'}`} 
-                    onClick={()=>{
-                                  console.log('button clicked')
-                                  if(!isMaxPage){
-                                    console.log('...next page')
+                    onClick={()=>{                                  
+                                  if(!isMaxPage){                                  
                                     setLoading(true)
                                     setPage(page+1)
                                   }
