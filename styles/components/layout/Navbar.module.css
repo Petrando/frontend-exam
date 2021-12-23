@@ -12,11 +12,17 @@
 }
 
 .menuItemContainer {
-  width: auto;
-  height: auto;
+  width: 40px;
+  max-width: 40px;
+  height: 42px;
+  max-height:42px;
   padding: 0px;
   margin-bottom: 22px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .menuItemContainer:first-of-type {
@@ -30,6 +36,8 @@
   margin: 0px;
   padding:0px;
   position:relative;
+  max-width: 24px;
+  max-height: 24px;
 }
 
 .blueDot{
