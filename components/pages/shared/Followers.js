@@ -6,8 +6,10 @@ import { SmallButton } from '../../global/Button';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from "../../global/Loading"
 import styles from "../../../styles/components/pages/shared/Followers.module.css";
+import { useStyles } from "../../../styles/components/pages/shared/Followers.module"
 
 const Followers = () => {
+  const classes = useStyles()
   const [activeTab, setActiveTab] = useState("Followers");
   const Tabs = [
                 {label:"Followers", link:"https://avl-frontend-exam.herokuapp.com/api/users/all"},
@@ -70,12 +72,12 @@ const Followers = () => {
   }
 
   return (
-    <Box className={styles.container}>
-      <Box className={styles.tabs}>
+    <Box className={classes.container}>
+      <Box className={classes.tabs}>
         {
           Tabs.map((tab, i)=>(  
                               <Box 
-                                className={`${styles.tabLabel} ${tab.label!==activeTab && styles.inactive}`} 
+                                className={`${classes.tabLabel} ${tab.label!==activeTab && classes.inactive}`} 
                                 key={i}
                                 onClick={()=>{setActiveTab(tab.label)}}
                               >
@@ -83,7 +85,7 @@ const Followers = () => {
                               </Box>
                   ))
         }
-        <Box className={`${styles.activeLine} ${activeTab==='Followers'?styles.followersActive:styles.followingActive}`} />
+        <Box className={`${classes.activeLine} ${activeTab==='Followers'?classes.followersActive:classes.followingActive}`} />
       </Box>
       {
         followers.length === 0 && isLoading && <Loading />
@@ -91,7 +93,7 @@ const Followers = () => {
       {
           followers.length  > 0 &&
           <InfiniteScroll
-              className={styles.followersContainer}
+              className={classes.followersContainer}
               dataLength={followers.length} //This is important field to render the next data
               next={fetchData}
               hasMore={!isMaxPage}
@@ -104,9 +106,9 @@ const Followers = () => {
             >
             {
                 followers.map((follower, i) => 
-                                              <Box key={i} className={styles.follower}>
-                                                <Box className={styles.data}>
-                                                  <Box className={styles.followerImg}>  
+                                              <Box key={i} className={classes.follower}>
+                                                <Box className={classes.data}>
+                                                  <Box className={classes.followerImg}>  
                                                     <Image 
                                                       src={`/images/follower${i<=7?i+1:8}.png`} 
                                                       width={40} 
@@ -114,16 +116,16 @@ const Followers = () => {
                                                       alt={follower.name}
                                                     />
                                                   </Box>
-                                                  <Box className={styles.followerAbout}>                                                    
-                                                    <p className={styles.fullname}>
+                                                  <Box className={classes.followerAbout}>                                                    
+                                                    <p className={classes.fullname}>
                                                       {follower.name}
                                                     </p>
-                                                    <p className={styles.username}>
+                                                    <p className={classes.username}>
                                                       {follower.username}
                                                     </p>
                                                   </Box>
                                                 </Box>
-                                                <Box className={styles.button}>
+                                                <Box className={classes.button}>
                                                   <SmallButton label={follower.isFollowing?'Following':'Follow'}
                                                                variant={follower.isFollowing?'contained':'outline'}
                                                   />
