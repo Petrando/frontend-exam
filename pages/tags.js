@@ -6,8 +6,10 @@ import TagCard from "../components/pages/tags/TagCard";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from "../components/global/Loading"
 import styles from "../styles/components/pages/tags/Tags.module.css"
+import {useStyles} from "../styles/components/pages/tags/Tags.module"
 
 const Tags = () => {
+  const classes = useStyles()
   const [tagsData, setData] = useState([])
   const [page, setPage] = useState(1)  
   const [isLoading, setLoading] = useState(true);

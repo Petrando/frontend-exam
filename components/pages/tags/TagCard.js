@@ -1,22 +1,25 @@
 import {Box} from '@mui/material'
 import styles from "../../../styles/components/pages/tags/TagCard.module.css"
+import {useStyles} from "../../../styles/components/pages/tags/TagCard.module"
 
 const TagCard = ({data:{name, count}}) => {
+  const classes = useStyles()
+  
   return (
-    <Box className={styles.card}>
-      <Box className={styles.cardTitleContainer}>
-        <h4 className={`${styles.cardTitle} hideLongWord`}>
+    <Box className={classes.card}>
+      <Box className={classes.cardTitleContainer}>
+        <h4 className={`${classes.cardTitle} hideLongWord`}>
           {
             name
           }
         </h4>
       </Box>
-      <p className={`${styles.tagTitle} hideLongWord`}>
+      <p className={`${classes.tagTitle} hideLongWord`}>
         {
           name
         }
       </p>
-      <p className={styles.tagCount}>
+      <p className={classes.tagCount}>
         {count}{' '}Questions
       </p>
     </Box>
