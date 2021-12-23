@@ -3,7 +3,7 @@
   min-height:100vh;
   width: 100%;
   margin-top: 0px;
-  
+  padding:0px 17.84722222222222vw 0px;
 }
 
 .pageTitle {
@@ -27,6 +27,7 @@
 @media screen and (max-width:414px) {
   .container {
     min-height: calc(100vh - 70px);
+    padding: 0px 20px;
   }
 
   .pageTitle {

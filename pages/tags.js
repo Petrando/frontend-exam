@@ -41,7 +41,7 @@ const Tags = () => {
 
   return (
     <Layout>
-      <Box className={`pageContentContainer ${styles.container}`}>
+      <Box className={styles.container}>
         <h3 className={styles.pageTitle}>Tags</h3>
         {
           tagsData.length > 0 &&
