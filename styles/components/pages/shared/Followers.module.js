@@ -106,6 +106,7 @@ export const useStyles = makeStyles(()=>({
     container:{
       zIndex: 100,
       display: "block",
+      flex: "1 1 375px",
       width:"375px",
       height: "100%",
       backgroundColor: "#1B1B1B"
