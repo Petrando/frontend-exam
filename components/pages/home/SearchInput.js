@@ -1,12 +1,14 @@
 import {Box} from '@mui/material'
 import TextInput from "../../global/TextInput"
 import styles from "../../../styles/components/pages/home/SearchInput.module.css"
+import {useStyles} from "../../../styles/components/pages/home/SearchInput.module"
 
 const SearchInput = ({searchText, setSearchText}) => {
+  const classes = useStyles()
   return (
-    <Box className={styles.container}>
+    <Box className={classes.container}>
       
-      <h4 className={styles.sectionTitle}>Search</h4>
+      <h4 className={classes.sectionTitle}>Search</h4>
       <TextInput searchText={searchText} setSearchText={setSearchText} />
     </Box>
   )
