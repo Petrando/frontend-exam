@@ -3,8 +3,10 @@ import Navbar from "./Navbar";
 import BackToHome from "../pages/shared/BackToHome";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import styles from "../../styles/components/layout/Layout.module.css"
+import {useStyles} from "../../styles/components/layout/Layout.module"
 
 const Layout = ({children}) => {
+  const classes = useStyles();
   const {width} = useWindowDimensions();
 
   const navElement =  width > 414?<Navbar />:<BackToHome />
@@ -13,9 +15,9 @@ const Layout = ({children}) => {
     <>
     {
       width > 0 &&
-      <Box className={styles.container}>
+      <Box className={classes.container}>
         {navElement}
-        <Box className={styles.main}>
+        <Box className={classes.main}>
           {children}
         </Box>
       </Box>
