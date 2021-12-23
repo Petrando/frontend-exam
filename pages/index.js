@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <FetchContext.Provider value={{keyword:searchText, pageSize:itemPerPage}}>
       <HomeLayout>     
-        <Box className={`pageContentContainer ${styles.container} `}>
+        <Box className={styles.container}>
           <NavLogo atNavbar={false} />
           <SearchInput searchText={searchText} setSearchText={setSearchText} />
           <PerPageSlider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} count={count} />

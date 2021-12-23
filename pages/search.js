@@ -50,7 +50,7 @@ const Search = () => {
   return (
     <Layout>
       <WithFollowersLayout atHome={false}>
-        <Box className={`pageContentContainer ${styles.container}`}>
+        <Box className={styles.container}>
           <h2 className={styles.pageTitle}>
             Results
             <Link href={"/"}>

@@ -24,6 +24,11 @@ body {
   padding:0px 18.65%;
 }
 
+.homeContainer {
+  margin-top: 0px;
+  padding:0px 10.13888888888889vw 0px 9.02777777777778vw;
+}
+
 .pageContent {
   width: 100%;
 }
