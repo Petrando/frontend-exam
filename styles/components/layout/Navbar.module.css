@@ -114,6 +114,7 @@
 
   .menuItemContainer {
     margin: 0px;    
+    max-width: 24px;
   }
 
   .menuItemContainer:first-of-type {
