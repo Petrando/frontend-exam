@@ -1,12 +1,11 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>({
   navbar: {
     backgroundColor: "#1B1B1B",
     flex: "1 1 80px",
     width: "80px",
     height: "auto",
-    position: "static",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",

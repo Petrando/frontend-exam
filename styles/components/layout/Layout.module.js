@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>{
+return  ({
   container:{
     display:'flex', justifyContent:'flex-start', alignItems:'stretch'
   },
@@ -10,7 +11,7 @@ export const useStyles = makeStyles(()=>({
     height:'100%',
     paddingTop: '0px'
   },
-  '@media screen and (max-width: 414px)':{
+  [theme.breakpoints.down('aboveMobile')]:{
     container:{
       display:'block'
     },
@@ -18,4 +19,4 @@ export const useStyles = makeStyles(()=>({
       width:'100%'
     }      
   }
-}))
+})})

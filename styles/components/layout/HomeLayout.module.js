@@ -1,21 +1,10 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>{
+console.log(theme)
+return ({
   container:{
     display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'stretch',
-    bacgkroundColor:'pink'
-  },
-  dummyDiv1: {
-    width:"50vw",
-    flex: "1 1 25vw",
-    height:"100vh", 
-    backgroundColor:"lightblue"
-  },
-  dummyDiv2: {
-    width:"50vw",
-    flex:"1 1 75vw",
-    height:"100vh", 
-    backgroundColor:"pink"
   },
   main: {
     flex:'1 1 calc(100% - 80px)',
@@ -23,14 +12,14 @@ export const useStyles = makeStyles(()=>({
     height:'100%',
     paddingTop: '0px'
   },
-  '@media screen and (max-width: 414px)':{
+  [theme.breakpoints.down('aboveMobile')]:{
     container: {
       maxHeight: "100%",
       maxHeight: "100vh",
       maxHeight: "-webkit-fill-available",
       maxHeight: "-moz-available",
       maxHeight: "fill-available",
-      maxHeight: "stretch",
+      maxHeight: "stretch",      
       flexDirection: "column-reverse"
     },
     main:{
@@ -41,4 +30,4 @@ export const useStyles = makeStyles(()=>({
       flexDirection: "column"
     }      
   }
-}))
+})})

@@ -17,8 +17,7 @@ const Navbar = () => {
   const { asPath } = router;
   const {width} = useWindowDimensions();
 
-  return (
-    <>    
+  return (    
     <nav className={classes.navbar}>
       {
         width>414 && <NavLogo atNavbar={true} />
@@ -27,7 +26,6 @@ const Navbar = () => {
         NavMenu.map(d => <NavMenuItem menuData={d} key={d.label} asPath={asPath} width={width} />)
       }
     </nav>
-    </>
   )
 }
 
