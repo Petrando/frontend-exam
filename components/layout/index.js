@@ -7,14 +7,16 @@ import theme from "../../styles/theme"
 
 const Layout = ({children}) => {
   const {width} = useWindowDimensions();
-
+  
   return (
     <>
     {
       width > 0 &&
-      <LayoutContent width={width}>
+      <ThemeProvider theme={theme} >        
+          <LayoutContent width={width}>
             {children}    
-          </LayoutContent>
+          </LayoutContent>        
+      </ThemeProvider>
     }
     </> 
 

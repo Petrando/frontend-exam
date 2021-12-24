@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>({
   navbar: {
     backgroundColor: "#1B1B1B",
     flex: "1 1 80px",
@@ -69,7 +69,7 @@ export const useStyles = makeStyles(()=>({
   logoNotAtNavbar: {
     display: "none"
   },  
-  '@media screen and (max-width:414px)': {
+  [theme.breakpoints.down('aboveMobile')]: {
     navbar: {
       width: "100%",
       height: "66px",    
