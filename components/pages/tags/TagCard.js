@@ -1,5 +1,4 @@
 import {Box} from '@mui/material'
-import styles from "../../../styles/components/pages/tags/TagCard.module.css"
 import {useStyles} from "../../../styles/components/pages/tags/TagCard.module"
 
 const TagCard = ({data:{name, count}}) => {

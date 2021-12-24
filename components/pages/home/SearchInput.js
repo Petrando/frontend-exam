@@ -1,6 +1,5 @@
 import {Box} from '@mui/material'
 import TextInput from "../../global/TextInput"
-import styles from "../../../styles/components/pages/home/SearchInput.module.css"
 import {useStyles} from "../../../styles/components/pages/home/SearchInput.module"
 
 const SearchInput = ({searchText, setSearchText}) => {

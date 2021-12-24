@@ -2,7 +2,6 @@ import {Box} from '@mui/material'
 import Navbar from "./Navbar";
 import BackToHome from "../pages/shared/BackToHome";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import styles from "../../styles/components/layout/Layout.module.css"
 import {useStyles} from "../../styles/components/layout/Layout.module"
 
 const Layout = ({children}) => {

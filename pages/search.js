@@ -9,7 +9,6 @@ import Button from '../components/global/Button';
 import SearchCard from '../components/pages/search/SearchCard';
 import Loading from '../components/global/Loading';
 import useWindowDimensions from '../hooks/useWindowDimensions';
-import styles from "../styles/components/pages/search/Search.module.css"
 import {useStyles} from "../styles/components/pages/search/Search.module"
 
 const Search = () => {

@@ -7,7 +7,6 @@ import SearchInput from '../components/pages/home/SearchInput'
 import PerPageSlider from '../components/pages/home/PerPageSlider'
 import GoToSearch from '../components/pages/home/GoToSearch'
 import FetchContext from "../context/FetchContext"
-import styles from '../styles/components/pages/home/Home.module.css'
 import {useStyles} from '../styles/components/pages/home/Home.module'
 
 export default function Home() {

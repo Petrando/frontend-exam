@@ -1,6 +1,5 @@
 import { Box, Grid, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material/'
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
-import styles from "../../../styles/components/pages/search/SearchCard.module.css"
 import {useStyles} from "../../../styles/components/pages/search/SearchCard.module"
 
 const SearchCard = ({data, idx}) => {

@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { SmallButton } from '../../global/Button';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from "../../global/Loading"
-import styles from "../../../styles/components/pages/shared/Followers.module.css";
 import { useStyles } from "../../../styles/components/pages/shared/Followers.module"
 
 const Followers = () => {

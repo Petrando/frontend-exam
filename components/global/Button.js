@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import FetchContext from '../../context/FetchContext'
 import Link from "next/link"
-import styles from "../../styles/components/global/Button.module.css"
 import {useStyles} from "../../styles/components/global/Button.module"
 
 const Button = ({label, onClick}) => {

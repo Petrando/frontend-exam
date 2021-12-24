@@ -1,7 +1,6 @@
 import {Box} from '@mui/material'
 import Followers from "../pages/shared/Followers";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-import styles from "../../styles/components/layout/WithFollowers.module.css";
 import {useStyles} from "../../styles/components/layout/WithFollowers.module"
 
 const WithFollowersLayout = ({children, atHome}) => {

@@ -7,7 +7,6 @@ import NavLogo from "../svg-shapes/NavLogo";
 import BlueDot from "../svg-shapes/BlueDot";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import FetchContext from "../../context/FetchContext";
-import styles from "../../styles/components/layout/Navbar.module.css"
 import {useStyles} from "../../styles/components/layout/Navbar.module"
 
 const NavMenu = [{label:"Home", path:"/"}, {label:"Tags", path:"/tags"}]

@@ -5,7 +5,6 @@ import Layout from "../components/layout";
 import TagCard from "../components/pages/tags/TagCard";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from "../components/global/Loading"
-import styles from "../styles/components/pages/tags/Tags.module.css"
 import {useStyles} from "../styles/components/pages/tags/Tags.module"
 
 const Tags = () => {
@@ -43,8 +42,8 @@ const Tags = () => {
 
   return (
     <Layout>
-      <Box className={styles.container}>
-        <h3 className={styles.pageTitle}>Tags</h3>
+      <Box className={classes.container}>
+        <h3 className={classes.pageTitle}>Tags</h3>
         {
           tagsData.length === 0 && isLoading &&<Loading />
         }
@@ -52,7 +51,7 @@ const Tags = () => {
           tagsData.length > 0 &&
 
             <InfiniteScroll
-              className={styles.tagsContainer}
+              className={classes.tagsContainer}
               dataLength={tagsData.length} //This is important field to render the next data
               next={fetchData}
               hasMore={!isMaxPage}

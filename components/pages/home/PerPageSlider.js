@@ -1,5 +1,4 @@
 import {Box} from '@mui/material'
-import styles from "../../../styles/components/pages/home/PerPageSlider.module.css"
 import { useStyles} from "../../../styles/components/pages/home/PerPageSlider.module"
 import Slider from "../../global/Slider"
 

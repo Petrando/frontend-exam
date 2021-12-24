@@ -2,7 +2,6 @@ import {Box} from '@mui/material'
 import Navbar from "./Navbar";
 import WithFollowersLayout from "./WithFollowersLayout";
 import useWindowDimensions from "../../hooks/useWindowDimensions"
-import styles from "../../styles/components/layout/HomeLayout.module.css";
 import {useStyles} from "../../styles/components/layout/HomeLayout.module"
 
 const HomeLayout = ({children}) => {

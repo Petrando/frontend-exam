@@ -1,4 +1,3 @@
-import styles from "../../styles/components/global/TextInput.module.css"
 import { useStyles} from "../../styles/components/global/TextInput.module"
 
 const TextInput = ({searchText, setSearchText}) => {

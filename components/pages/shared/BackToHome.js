@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { useRouter } from 'next/router';
 import Action from "../../svg-shapes/Action";
-import styles from "../../../styles/components/pages/shared/BackToHome.module.css"
 import {useStyles} from "../../../styles/components/pages/shared/BackToHome.module"
 
 const BackToHome = () => {
