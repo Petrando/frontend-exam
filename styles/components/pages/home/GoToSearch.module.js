@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles((theme)=>({
+export const useStyles = makeStyles(()=>({
   container: {
     width: "100%",
     flex: "1 1 51.33333333333333vh",
@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme)=>({
       marginBottom:"0px"
     }
   },
-  [theme.breakpoints.down('aboveMobile')]: {
+  '@media screen and (max-width:414px)': {
     container: {
       /*height: 25.86206896551724vh !important;*/
       flex:"1 1 25.86206896551724vh",

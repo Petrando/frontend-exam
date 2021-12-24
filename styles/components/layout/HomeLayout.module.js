@@ -1,7 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
 export const useStyles = makeStyles((theme)=>{
-console.log(theme)
 return ({
   container:{
     display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'stretch',
