@@ -8,8 +8,10 @@ import PerPageSlider from '../components/pages/home/PerPageSlider'
 import GoToSearch from '../components/pages/home/GoToSearch'
 import FetchContext from "../context/FetchContext"
 import styles from '../styles/components/pages/home/Home.module.css'
+import {useStyles} from '../styles/components/pages/home/Home.module'
 
 export default function Home() {
+  const classes = useStyles()
   const [itemPerPage, setItemPerPage] = useState(15);
   const [searchText, setSearchText] = useState("");
   const [count, setCount] = useState(0);
@@ -33,7 +35,7 @@ export default function Home() {
   return (
     <FetchContext.Provider value={{keyword:searchText, pageSize:itemPerPage}}>
       <HomeLayout>     
-        <Box className={styles.container}>
+        <Box className={classes.container}>
           <NavLogo atNavbar={false} />
           <SearchInput searchText={searchText} setSearchText={setSearchText} />
           <PerPageSlider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} count={count} />
