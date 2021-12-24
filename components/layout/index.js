@@ -6,18 +6,16 @@ import {useStyles} from "../../styles/components/layout/Layout.module"
 import theme from "../../styles/theme"
 
 const Layout = ({children}) => {
-  const classes = useStyles();
   const {width} = useWindowDimensions();
+  
   return (
     <>
     {
       width > 0 &&
-      <ThemeProvider theme={theme} >
-        <Box className={classes.container}>
+      <ThemeProvider theme={theme} >        
           <LayoutContent width={width}>
             {children}    
-          </LayoutContent>
-        </Box>
+          </LayoutContent>        
       </ThemeProvider>
     }
     </> 
@@ -31,12 +29,12 @@ const LayoutContent = ({children, width}) => {
   const navElement =  width > 414?<Navbar />:<BackToHome />
 
   return (
-  <>
-    {navElement}
-    <Box className={classes.main}>
-      {children}
+    <Box className={classes.container}>
+      {navElement}
+      <Box className={classes.main}>
+        {children}
+      </Box>
     </Box>
-  </>
 )}
 
 export default Layout;

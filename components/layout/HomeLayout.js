@@ -35,7 +35,7 @@ const LayoutContent = ({children}) => {
             }
           }
         `}</style>  
-      </Box>
+    </Box>
   )
 }
 export default HomeLayout;
