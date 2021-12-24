@@ -44,6 +44,7 @@ export const useStyles = makeStyles(()=>({
     color:"#929292"
   },  
   followersContainer: {
+    marginTop:"32px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
