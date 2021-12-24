@@ -46,6 +46,9 @@ const Tags = () => {
       <Box className={styles.container}>
         <h3 className={styles.pageTitle}>Tags</h3>
         {
+          tagsData.length === 0 && isLoading &&<Loading />
+        }
+        {
           tagsData.length > 0 &&
 
             <InfiniteScroll
@@ -53,7 +56,7 @@ const Tags = () => {
               dataLength={tagsData.length} //This is important field to render the next data
               next={fetchData}
               hasMore={!isMaxPage}
-              loader={<Loading />}
+              loader={<><br /><Loading /></>}
               endMessage={
                 <p style={{ textAlign: 'center' }}>
                   <b>All tags loaded</b>
