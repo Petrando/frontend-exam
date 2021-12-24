@@ -32,7 +32,7 @@ export const useStyles = makeStyles((theme)=>({
       marginTop: "6vh"
     }
   },
-  [theme.breakpoints.up('aboveMobile')]: {
+  '@media screen and (max-width:414px)': {
     container: {
       /*height:calc(22.41379310344828vh - 8.62068965517241vh) !important;*/
       flex: "1 1 calc(22.41379310344828vh - 8.62068965517241vh)",
