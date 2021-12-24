@@ -11,39 +11,55 @@ import {useStyles} from '../styles/components/pages/home/Home.module'
 
 export default function Home() {
   const classes = useStyles()
+
+  //additional state to handle send back params..
+  const [initByRouter, setInitByRouter] = useState(false)
+  
   const [itemPerPage, setItemPerPage] = useState(15);
   const [searchText, setSearchText] = useState("");
   const [count, setCount] = useState(0);
   const router = useRouter()
 
   useEffect(()=>{    
-    fetchResult();
- }, [searchText])
+    if(initByRouter){
+      fetchResult();
+    }    
+  }, [searchText])
 
   useEffect(()=>{
-    console.log(router.query);
-    if(router.query.keyword){
-      const {keyword, pageSize} = router.query;
-      if(keyword!==''){
-        setSearchText(keyword)
-        console.log('keyword changed')
-      }      
-      //fetchResult()
-      //setItemPerPage(router.query.pageSize)
+    if(initByRouter){
+      console.log('hiii')
+      fetchResult()
     }
+  }, [initByRouter])
+
+  useEffect(()=>{
+    (async () => {
+      if(router.query.keyword){
+        const {keyword, pageSize} = router.query;
+        await setSearchText(keyword)     
+        //fetchResult()
+        //setItemPerPage(router.query.pageSize)
+      }else {
+        await setSearchText('')
+      }
+
+      setInitByRouter(true);
+    })()
+    
   }, [])
 
   const fetchResult = () => {
     fetch("https://avl-frontend-exam.herokuapp.com/api/users/all?keyword=" + searchText)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json)
         setCount(json.total)
       })
       .catch(err=>{
         console.log(err)
       }) 
   }
+
   return (
     <FetchContext.Provider value={{keyword:searchText, pageSize:itemPerPage}}>
       <HomeLayout>     

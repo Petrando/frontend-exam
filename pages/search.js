@@ -25,14 +25,12 @@ const Search = () => {
 
   useEffect(()=>{
      fetchData();
-     console.log(page)
   }, [page])
 
   const fetchData = async () => {    
     await fetch(`https://avl-frontend-exam.herokuapp.com/api/users/all?page=${page}&pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json)
         if(json.data.length > 0){
           setData(searchData.concat(json.data))
         }else{
@@ -46,7 +44,6 @@ const Search = () => {
 
     setLoading(false)
   }
-  console.log(router.query)
 
   return (
     <Layout>

@@ -24,8 +24,7 @@ const Tags = () => {
     setLoading(true)
     await fetch(`https://avl-frontend-exam.herokuapp.com/api/tags?page=${page}&pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`)
       .then((res) => res.json())
-      .then((json) => {
-        console.log(json)
+      .then((json) => {        
         if(json.length > 0){
           setData(tagsData.concat(json))
         }

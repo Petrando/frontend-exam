@@ -48,7 +48,6 @@ const Followers = () => {
     await fetch(link + queryParams)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json)
         if(json.data.length > 0){
           if(page===1 || followers.length === 0)//page===1 or followers is empty means tab was switched...
           {

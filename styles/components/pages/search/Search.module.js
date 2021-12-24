@@ -12,7 +12,7 @@ export const useStyles = makeStyles(()=>({
     justifyContent:"space-between",
     alignItems:"center",
     flexWrap:"wrap",
-    marginBottom:"23.5px"
+    marginBottom:"9px",//figma 39px, searchCard margin bottom 21px
   },
   pageTitle:{
     fontStyle: "normal",
