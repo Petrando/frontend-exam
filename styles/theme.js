@@ -5,12 +5,6 @@ const theme = createTheme({
     fontFamily:'"Ubuntu", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,' + 
                 'Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',            
   },
-  /*
-  palette: {
-    primary: {
-      main: "#8f29a3"
-    }
-  },*/
   breakpoints: {
     values: {
       mobile: 414,      

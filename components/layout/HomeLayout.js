@@ -8,11 +8,9 @@ import theme from "../../styles/theme"
 const HomeLayout = ({children}) => {
   
   return (
-    <ThemeProvider theme={theme} >
-      <LayoutContent>
+    <LayoutContent>
         {children}
       </LayoutContent>
-    </ThemeProvider>
   )
 }
 
