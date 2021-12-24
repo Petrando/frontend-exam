@@ -24,16 +24,9 @@ export default function Home() {
     if(initByRouter){
       fetchResult();
     }    
-  }, [searchText])
+  }, [searchText, initByRouter])
 
-  useEffect(()=>{
-    if(initByRouter){
-      console.log('hiii')
-      fetchResult()
-    }
-  }, [initByRouter])
-
-  useEffect(()=>{
+  useEffect(()=>{//if there are router query params sent back from backToHome, proccess them here
     (async () => {
       if(router.query.keyword){
         const {keyword, pageSize} = router.query;
