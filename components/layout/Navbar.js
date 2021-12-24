@@ -8,17 +8,19 @@ import BlueDot from "../svg-shapes/BlueDot";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import FetchContext from "../../context/FetchContext";
 import styles from "../../styles/components/layout/Navbar.module.css"
+import {useStyles} from "../../styles/components/layout/Navbar.module"
 
 const NavMenu = [{label:"Home", path:"/"}, {label:"Tags", path:"/tags"}]
 
 const Navbar = () => {
+  const classes = useStyles()
   const router = useRouter();
   const { asPath } = router;
   const {width} = useWindowDimensions();
 
   return (
     <>    
-    <nav className={styles.navbar}>
+    <nav className={classes.navbar}>
       {
         width>414 && <NavLogo atNavbar={true} />
       }    
@@ -31,6 +33,7 @@ const Navbar = () => {
 }
 
 const NavMenuItem = ({menuData : {label, path}, asPath, width}) => {
+  const classes = useStyles()
   const isActive = path === "/"?asPath==="/" || asPath.startsWith("/?") || asPath.startsWith("/search?") : 
                                 asPath.startsWith(path+"?") || asPath === path;
   const showBlueDot = !asPath.startsWith("/tags") && path==="/tags" && width > 414;
@@ -41,16 +44,16 @@ const NavMenuItem = ({menuData : {label, path}, asPath, width}) => {
 
   return (
     <Link href={{pathname:path, query:fetchParams}}>
-      <a className={styles.menuItemContainer}>
-        <Box className={styles.iconContainer}>
+      <a className={classes.menuItemContainer}>
+        <Box className={classes.iconContainer}>
           <MenuIcon isActive={isActive}/>
-          <Box className={`${styles.blueDot} ${!showBlueDot&&'hidden'}`}>
+          <Box className={`${classes.blueDot} ${!showBlueDot&&'hidden'}`}>
             <BlueDot />
           </Box>
         </Box>                  
         {
           isActive &&
-          <p className={styles.menuLabel}>
+          <p className={classes.menuLabel}>
             {label}
           </p>
         }
