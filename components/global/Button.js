@@ -2,21 +2,24 @@ import { useContext } from 'react'
 import FetchContext from '../../context/FetchContext'
 import Link from "next/link"
 import styles from "../../styles/components/global/Button.module.css"
+import {useStyles} from "../../styles/components/global/Button.module"
 
 const Button = ({label, onClick}) => {
+  const classes = useStyles()
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={classes.button} onClick={onClick}>
       {label}
     </button>
   )
 }
 
 export const LinkButton = ({label, href}) => {
+  const classes = useStyles()
   const fetchParams = useContext(FetchContext);
   
   return (
     <Link href={{pathname:href, query:fetchParams}}>
-      <a className={styles.button}>
+      <a className={classes.button}>
         {label}
       </a>
     </Link>
@@ -24,8 +27,9 @@ export const LinkButton = ({label, href}) => {
 }
 
 export const SmallButton = ({label, variant}) => {
+  const classes = useStyles()
   return (
-    <button className={`${styles.smallButton} ${variant==='contained'?styles.smallButtonContained:styles.smallButtonOutlined}`}>
+    <button className={`${classes.smallButton} ${variant==='contained'?classes.smallButtonContained:classes.smallButtonOutlined}`}>
       {label}
     </button>
   )
