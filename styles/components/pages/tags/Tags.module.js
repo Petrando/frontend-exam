@@ -14,7 +14,7 @@ export const useStyles = makeStyles(()=>({
     letterSpacing: "0.25px",
     marginTop: "0px",
     textAlign: "start",
-    marginTop:"99.5px"//calc(92px + 7.5px);
+    marginTop:"87.5px"//calc(80px + 7.5px);
   },  
   tagsContainer: {
     display: "flex",
