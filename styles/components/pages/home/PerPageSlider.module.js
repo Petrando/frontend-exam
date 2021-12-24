@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>({
   container: {
     width: "100%",
     flex: "1 1 26.44444444444444vh",
