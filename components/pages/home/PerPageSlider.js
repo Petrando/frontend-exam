@@ -12,7 +12,7 @@ const PerPageSlider = ({itemPerPage, setItemPerPage, count}) => {
           {count}<span className={classes.result}>results</span>
         </h3>        
       </Box>
-      <Slider setItemPerPage={setItemPerPage} />
+      <Slider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} />
     </Box>
   )
 }

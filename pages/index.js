@@ -17,8 +17,21 @@ export default function Home() {
   const router = useRouter()
 
   useEffect(()=>{    
-     fetchResult();
-  }, [searchText])
+    fetchResult();
+ }, [searchText])
+
+  useEffect(()=>{
+    console.log(router.query);
+    if(router.query.keyword){
+      const {keyword, pageSize} = router.query;
+      if(keyword!==''){
+        setSearchText(keyword)
+        console.log('keyword changed')
+      }      
+      //fetchResult()
+      //setItemPerPage(router.query.pageSize)
+    }
+  }, [])
 
   const fetchResult = () => {
     fetch("https://avl-frontend-exam.herokuapp.com/api/users/all?keyword=" + searchText)

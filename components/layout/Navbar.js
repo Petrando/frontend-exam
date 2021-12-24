@@ -38,9 +38,6 @@ const NavMenuItem = ({menuData : {label, path}, asPath, width}) => {
   const showBlueDot = !asPath.startsWith("/tags") && path==="/tags" && width > 414;
   const fetchParams = useContext(FetchContext);
 
-  console.log(asPath, typeof asPath);
-  //console.log(fetchParams);
-
   return (
     <Link href={{pathname:path, query:fetchParams}}>
       <a className={classes.menuItemContainer}>

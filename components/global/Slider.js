@@ -3,9 +3,9 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
-const MySlider = ({ setItemPerPage}) => {
+const MySlider = ({ itemPerPage, setItemPerPage}) => {
   const {width, height} = useWindowDimensions()
-
+  
   const [marginTop, setMarginTop] = useState({});
   const [currentValue, setCurrentValue] = useState(5);
   const [perPageMarks, setPageMarks] = useState({
@@ -18,24 +18,27 @@ const MySlider = ({ setItemPerPage}) => {
   })
 
   useEffect(()=>{
-    setMarginTop(
-      width > 0 && width <= 414 ? {marginTop:'7px'} :
-      width > 414 && height > 640 ? {marginTop:'7px'} :
-      {}
-    )
+    const marginTop = width > 0 && width <= 414 ? {marginTop:'7px'} :
+                      width > 414 && height > 640 ? {marginTop:'7px'} :
+                      {}
+    setMarginTop(marginTop)
   }, [width, height]);
 
   useEffect(()=>{
     let updatedMarks = {}
     for(let prop in perPageMarks){
-      let style = perPageMarks[prop].style.hasOwnProperty('color')?{...marginTop, color:"#FFFFFF"}:
-                                                       {...marginTop}       
+      const style = perPageMarks[prop].style.hasOwnProperty('color')?{...marginTop, color:"#FFFFFF"}:
+                                                                     {...marginTop}       
 
       const label = perPageMarks[prop].label;
       updatedMarks[prop] = {style, label}
     }
     setPageMarks(updatedMarks)
   }, [marginTop])
+
+  useEffect(()=>{
+
+  }, [itemPerPage])
 
   const changeValue = (newValue) => {
     setCurrentValue(newValue);
