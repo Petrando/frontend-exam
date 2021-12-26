@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>({
   button: {
     display: "flex",
     flexDirection: "row",
@@ -27,7 +27,7 @@ export const useStyles = makeStyles(()=>({
       border: "1px solid #FFFFFF"
     }
   },  
-  '@media screen and (min-width:1440px)': {
+  [theme.breakpoints.up('largeScreen')]: {
     button: {
       width: "343px"
     }

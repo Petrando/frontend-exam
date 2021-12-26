@@ -1,15 +1,15 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>({
   container: {
     padding: "20px auto",
     display: "flex",
     justifyContent: "center",
     alignItems: "center"
   },  
-  '@media screen and (max-width:414px)': {
+  [theme.breakpoints.down('aboveMobile')]: {
     container: {
-      padding: "10px auto"
+      padding: "15px auto"
     }
   }
 }))
