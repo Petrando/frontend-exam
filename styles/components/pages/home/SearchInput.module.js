@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme)=>({
     }
   },  
   sectionTitle: {
-    marginBottom: "2.22222222222222vh",
+    marginBottom: "2.88888888888889vh",
     padding:"0px",
     fontStyle: "normal",
     fontWeight: "normal",
@@ -32,7 +32,7 @@ export const useStyles = makeStyles((theme)=>({
       marginTop: "6vh"
     }
   },
-  '@media screen and (max-width:414px)': {
+  [theme.breakpoints.down('aboveMobile')]: {
     container: {
       /*height:calc(22.41379310344828vh - 8.62068965517241vh) !important;*/
       flex: "1 1 calc(22.41379310344828vh - 8.62068965517241vh)",

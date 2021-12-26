@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme)=>({
       marginBottom:"0px"
     }
   },
-  '@media screen and (max-width:414px)': {
+  [theme.breakpoints.down('aboveMobile')]: {
     container: {
       /*height: 25.86206896551724vh !important;*/
       flex:"1 1 25.86206896551724vh",
