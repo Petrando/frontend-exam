@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>({
   container: {
     display: "none",
     zIndex: 100
@@ -103,7 +103,7 @@ export const useStyles = makeStyles(()=>({
     justifyContent: "center",
     alignItems: "center"
   },
-  '@media screen and (min-width:1440px)':{
+  [theme.breakpoints.up('largeScreen')]:{
     container:{
       zIndex: 100,
       display: "block",

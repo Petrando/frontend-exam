@@ -9,7 +9,7 @@ const theme = createTheme({
     values: {
       mobile: 414,      
       aboveMobile: 415,
-      largeScreen:1440,//1440 theme.breakpoints.up is exclusive
+      largeScreen:1440,//1440 theme.breakpoints.up is (INCLUSIVE)
     },
   },
   color:'#FFFFFF',
