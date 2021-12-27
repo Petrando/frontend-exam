@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme)=>({
     //height:"calc(22.22222222222222vh - 0.25px)",/*figma height : 200px*/
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "flex-start",
     borderBottom: "0.25px solid rgba(255, 255, 255, 0.1)",
     "& input":{
