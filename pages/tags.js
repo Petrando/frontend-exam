@@ -30,7 +30,7 @@ const Tags = () => {
             <InfiniteScroll
               className={classes.tagsContainer}
               dataLength={tagsData.length} //This is important field to render the next data
-              next={nextPage}
+              next={()=>{}}
               hasMore={!isMaxPage}
               loader={<><br /><Loading /></>}
               endMessage={
