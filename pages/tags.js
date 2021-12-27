@@ -1,43 +1,21 @@
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import {Box} from '@mui/material'
 import Layout from "../components/layout";
 import TagCard from "../components/pages/tags/TagCard";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from "../components/global/Loading"
+import useFetchApi from '../hooks/useFetchApi';
 import {useStyles} from "../styles/components/pages/tags/Tags.module"
 
 const Tags = () => {
   const classes = useStyles()
-  const [tagsData, setData] = useState([])
-  const [page, setPage] = useState(1)  
-  const [isLoading, setLoading] = useState(true);
-  const [isMaxPage, setIsMax] = useState(false);
   const router = useRouter()
   const {pageSize, keyword} = router
-
-  useEffect(()=>{
-    fetchData();
-  }, [])
-
-  const fetchData = async () => {
-    setLoading(true)
-    await fetch(`https://avl-frontend-exam.herokuapp.com/api/tags?page=${page}&pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`)
-      .then((res) => res.json())
-      .then((json) => {        
-        if(json.length > 0){
-          setData(tagsData.concat(json))
-        }
-        else{
-          setIsMax(true)
-        }
-      })
-      .catch(err => {
-        console.log(err)
-      })
-      setLoading(false)
-      setPage(page+1)
-  }
+  const {data:tagsData, nextPage, isLoading, isMaxPage} = useFetchApi(
+    "https://avl-frontend-exam.herokuapp.com/api/tags",
+    `pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`,
+    false
+  )
 
   return (
     <Layout>
@@ -52,7 +30,7 @@ const Tags = () => {
             <InfiniteScroll
               className={classes.tagsContainer}
               dataLength={tagsData.length} //This is important field to render the next data
-              next={fetchData}
+              next={nextPage}
               hasMore={!isMaxPage}
               loader={<><br /><Loading /></>}
               endMessage={
@@ -73,7 +51,5 @@ const Tags = () => {
     </Layout>
   )
 }
-
-// 
 
 export default Tags;
