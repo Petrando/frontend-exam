@@ -47,10 +47,12 @@ export const useStyles = makeStyles((theme)=>({
   
     cardContent: {
       margin: "0px 0px auto"
-    },
-  
+    },  
     cardTitle: {
-      margin: "24.33px 0px 0px"
+      margin: "23.83px 0px 0px"
+    },
+    username : {
+      margin:"4.75px 0px 0px"
     }
   },
   '@media screen and (min-width:541px) and (max-width:768px)': {

@@ -43,8 +43,8 @@ export const useStyles = makeStyles((theme)=>({
     },*/
     pageTitle: {
       fontSize: "24px",
-      marginTop:"20px",
-      marginBottom:"24px"
+      marginTop:"26px",
+      marginBottom:"30px"
     },
     action: {
       display: "none"
