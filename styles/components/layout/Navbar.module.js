@@ -69,7 +69,7 @@ export const useStyles = makeStyles((theme)=>({
   logoNotAtNavbar: {
     display: "none"
   },  
-  [theme.breakpoints.down('aboveMobile')]: {
+  [theme.breakpoints.down('midScreen')]: {
     navbar: {
       width: "100%",
       height: "66px",    

@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme)=>({
     top:"0px",
     height:"100%"
   },
-  [theme.breakpoints.down('aboveMobile')]:{
+  [theme.breakpoints.down('midScreen')]:{
     main:{
       padding:"0px 20px"
     }

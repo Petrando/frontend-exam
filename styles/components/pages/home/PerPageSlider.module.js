@@ -45,7 +45,7 @@ export const useStyles = makeStyles((theme)=>({
     position:"relative", 
     bottom:"4px",
   },
-  [theme.breakpoints.down('aboveMobile')]: {
+  [theme.breakpoints.down('midScreen')]: {
     container: {
       /*height: calc(51.72413793103448vh - 0.25px) !important;*/
       flex: "1 2 51.72413793103448vh",

@@ -23,7 +23,7 @@ export const useStyles = makeStyles((theme)=>({
     alignItems: "center",
     flexWrap: "wrap"
   },  
-  [theme.breakpoints.down('aboveMobile')]: {
+  [theme.breakpoints.down('midScreen')]: {
     container: {
       minHeight: "calc(100vh - 70px)",
       padding: "0px 20px"

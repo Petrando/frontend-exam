@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme)=>({
     justifyContent: "center",
     alignItems: "center"
   },  
-  [theme.breakpoints.down('aboveMobile')]: {
+  [theme.breakpoints.down('midScreen')]: {
     container: {
       padding: "15px auto"
     }

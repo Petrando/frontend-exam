@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme)=>({
     lineHeight: "150%",
     marginTop: "0px"
   },  
-  [theme.breakpoints.down('aboveMobile')]: {
+  [theme.breakpoints.down('midScreen')]: {
     container: {
       maxHeight: "calc(100vh - 66px)",
       padding: "0px"

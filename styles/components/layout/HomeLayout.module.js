@@ -11,7 +11,7 @@ return ({
     height:'100%',
     paddingTop: '0px'
   },
-  [theme.breakpoints.down('aboveMobile')]:{
+  [theme.breakpoints.down('midScreen')]:{
     container: {
       maxHeight: "100%",
       maxHeight: "100vh",

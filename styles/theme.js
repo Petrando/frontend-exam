@@ -8,7 +8,7 @@ const theme = createTheme({
   breakpoints: {
     values: {
       mobile: 414,      
-      aboveMobile: 415,
+      midScreen: 415,
       largeScreen:1440,//1440 theme.breakpoints.up is (INCLUSIVE)
     },
   },

@@ -11,7 +11,7 @@ return  ({
     height:'100%',
     paddingTop: '0px'
   },
-  [theme.breakpoints.down('aboveMobile')]:{
+  [theme.breakpoints.down('midScreen')]:{
     container:{
       display:'block'
     },

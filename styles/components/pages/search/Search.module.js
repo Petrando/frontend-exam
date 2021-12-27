@@ -36,7 +36,7 @@ export const useStyles = makeStyles((theme)=>({
     margin: "0px", 
     height:"60px"
   },
-  [theme.breakpoints.down('aboveMobile')]:{
+  [theme.breakpoints.down('midScreen')]:{
     container:{
       width: "100%",
       minHeight: "calc(100vh - 70px)",

@@ -32,7 +32,7 @@ export const useStyles = makeStyles((theme)=>({
       marginTop: "6.66666666666667vh"
     }
   },
-  [theme.breakpoints.down('aboveMobile')]: {
+  [theme.breakpoints.down('midScreen')]: {
     container: {
       /*height:calc(22.41379310344828vh - 8.62068965517241vh) !important;*/
       flex: "1 1 calc(22.41379310344828vh - 8.62068965517241vh)",
