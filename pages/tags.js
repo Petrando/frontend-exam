@@ -31,8 +31,7 @@ const Tags = () => {
               className={classes.tagsContainer}
               dataLength={tagsData.length} //This is important field to render the next data
               next={()=>{}}
-              hasMore={!isMaxPage}
-              loader={<><br /><Loading /></>}
+              hasMore={false}
               endMessage={
                 <p style={{ textAlign: 'center' }}>
                   <b>All tags loaded</b>
