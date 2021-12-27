@@ -47,12 +47,14 @@ export const useStyles = makeStyles(()=>({
   },  
   '@media screen and (max-width:320px)': {
     card: {
-      width: "100%"
+      width: "100%",
+      margin:"0px 0px 24px"
     }
   },  
   '@media screen and (min-width:321px) and (max-width:768px)': {
     card: {
-      width: "calc(50% - 3.2vw)"
+      width: "calc(50% - 3.2vw)",
+      margin:"0px 0px 24px"
     }
   },  
   '@media screen and (min-width:769px) and (max-width:1024px)': {

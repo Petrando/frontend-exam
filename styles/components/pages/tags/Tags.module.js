@@ -30,7 +30,7 @@ export const useStyles = makeStyles((theme)=>({
     },  
     pageTitle: {
       fontSize: "24px",
-      marginTop: "20px"
+      marginTop: "26px"//20px + 6px
     }
   }
 }))
