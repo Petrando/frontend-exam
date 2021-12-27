@@ -8,10 +8,20 @@ const useFetchApi = (endpoint, query, pageChangeble = true) => {
 
   useEffect(()=>{
     fetchData();    
-  }, [page, query, endpoint])
+  }, [page])
+
+  useEffect(()=>{
+    async ()=>{
+      await setData([])
+      await setPage(1)
+      await setIsMax(false)
+
+      fetchData()
+    }
+  }, [query, endpoint])
 
   const fetchData = async () => {    
-    setLoading(true);
+    await setLoading(true);
     const ApiEndpoint = pageChangeble?`${endpoint}?page=${page}&${query}`:endpoint;
     
     await fetch(ApiEndpoint)
