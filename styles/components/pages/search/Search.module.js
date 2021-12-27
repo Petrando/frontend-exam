@@ -6,14 +6,6 @@ export const useStyles = makeStyles((theme)=>({
     width: "100%",
     marginTop: "0px",
     padding: "0px 10.13888888888889vw 0px 9.02777777777778vw"
-  }, 
-  grid:{
-    width:'100%',
-    display:"flex",
-    justifyContent:"space-between",
-    alignItems:"center",
-    flexWrap:"wrap",
-    marginBottom:"9px",//figma 39px, searchCard margin bottom 21px
   },
   pageTitle:{
     fontStyle: "normal",
@@ -30,6 +22,14 @@ export const useStyles = makeStyles((theme)=>({
     right: "calc(100% + 25px)",
     top:"0px",
     cursor: "pointer"
+  }, 
+  grid:{  
+    width:'100%',
+    display:"flex",
+    justifyContent:"space-between",
+    alignItems:"center",
+    flexWrap:"wrap",
+    marginBottom:"9px",//figma 39px, searchCard margin bottom 21px
   },
   [theme.breakpoints.down('aboveMobile')]:{
     container:{

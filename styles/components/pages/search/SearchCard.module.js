@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme)=>({
     flexDirection: "column",
     justifyContent: "flex-start",
     height: "197px",
-    width: "calc(33.3333333333% - 17px)",//"calc((100% / 3) - 17px)",
+    width: "calc((100% / 3) - 17px)",//"calc((100% / 3) - 17px)",
     margin:"0px 0px 31px",
     borderRadius: "0px",
     border:"none",
