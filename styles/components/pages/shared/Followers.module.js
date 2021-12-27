@@ -9,14 +9,29 @@ export const useStyles = makeStyles((theme)=>({
     height:"calc(65px - 2px)",
     display: "flex",
     justifyContent: "center",
-    alignItems: "start",
+    alignItems: "flex-start",
     paddingTop: "36px",
     borderBottom: "2px solid #1F1F1F",
     position: "relative"
   },  
+  tabLabel: {
+    width: "50%",
+    margin:"0px",
+    padding:"0px 0px 45px 0px",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: "16px",    
+    cursor:"pointer",
+    textAlign: "center",
+    letterSpacing: "0.15px",
+    transition:"color 0.25s",    
+  },  
+  inactive: {
+    color:"#929292"
+  },  
   activeLine: {
     position: "absolute",
-    bottom:"0px",
+    bottom:"-2px",
     width: "50%",
     height:"2px",
     backgroundColor: "#FFFFFF",
@@ -27,21 +42,6 @@ export const useStyles = makeStyles((theme)=>({
   },
   followingActive: {
     left:"50%"
-  },  
-  tabLabel: {
-    width: "50%",
-    margin:"0px",
-    padding:"0px",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "16px",    
-    cursor:"pointer",
-    textAlign: "center",
-    letterSpacing: "0.15px",
-    transition:"color 0.25s"
-  },  
-  inactive: {
-    color:"#929292"
   },  
   followersContainer: {
     marginTop:"32px",
