@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 export const useStyles = makeStyles((theme)=>({
   container: {
     maxHeight: "100vh !important",
-    paddingTop: "0px",  
+    padding: "0px 9.02777777777778vw",  
     display: "flex",
     flexDirection: "column"
   },  

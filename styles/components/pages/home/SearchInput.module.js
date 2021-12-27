@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme)=>({
     //height:"calc(22.22222222222222vh - 0.25px)",/*figma height : 200px*/
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "flex-start",
     borderBottom: "0.25px solid rgba(255, 255, 255, 0.1)",
     "& input":{
@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme)=>({
     }
   },  
   sectionTitle: {
-    marginBottom: "2.88888888888889vh",
+    marginBottom: "2.22222222222222vh",//"2.88888888888889vh",
     padding:"0px",
     fontStyle: "normal",
     fontWeight: "normal",
@@ -29,7 +29,7 @@ export const useStyles = makeStyles((theme)=>({
       justifyContent: "flex-start"
     },  
     sectionTitle: {
-      marginTop: "6vh"
+      marginTop: "6.66666666666667vh"
     }
   },
   [theme.breakpoints.down('aboveMobile')]: {

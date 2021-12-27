@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme)=>({
     width: "100%",
     height: "auto",
     position: "relative",
-    padding: "0px 10.13888888888889vw 0px 9.02777777777778vw"
+    padding: "0px"
   },  
   /*hack, so followers height will looks like match to the left element....*/
   followersShade: {

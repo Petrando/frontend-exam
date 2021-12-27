@@ -4,7 +4,8 @@ export const useStyles = makeStyles((theme)=>({
   container:{
     minHeight:"100vh",
     width: "100%",
-    marginTop: "0px"
+    marginTop: "0px",
+    padding: "0px 10.13888888888889vw 0px 9.02777777777778vw"
   }, 
   grid:{
     width:'100%',

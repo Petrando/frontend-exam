@@ -41,7 +41,9 @@ export const useStyles = makeStyles((theme)=>({
   result: {     
     fontWeight: "normal",
     fontSize: "16px",
-    marginLeft: "10px"    
+    marginLeft: "10px",
+    position:"relative", 
+    bottom:"4px",
   },
   [theme.breakpoints.down('aboveMobile')]: {
     container: {
