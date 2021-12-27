@@ -17,6 +17,7 @@ export const useStyles = makeStyles((theme)=>({
   [theme.breakpoints.down('aboveMobile')]: {
     container: {
       maxHeight: "calc(100vh - 66px)",
+      padding: "0px"
     }
   }
 }))

@@ -35,6 +35,7 @@ export const useStyles = makeStyles((theme)=>({
     container:{
       width: "100%",
       minHeight: "calc(100vh - 70px)",
+      padding:"0px"
     },  
     /*
     grid:{
