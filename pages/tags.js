@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import {Box} from '@mui/material'
 import Layout from "../components/layout";
 import TagCard from "../components/pages/tags/TagCard";
-import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from "../components/global/Loading"
 import useFetchApi from '../hooks/useFetchApi';
 import {useStyles} from "../styles/components/pages/tags/Tags.module"
@@ -27,23 +26,12 @@ const Tags = () => {
         {
           tagsData.length > 0 &&
 
-            <InfiniteScroll
-              className={classes.tagsContainer}
-              dataLength={tagsData.length} //This is important field to render the next data
-              next={()=>{}}
-              hasMore={false}
-              endMessage={
-                <p style={{ textAlign: 'center' }}>
-                  <b>All tags loaded</b>
-                </p>
-              }
-            >
-            
+            <Box className={classes.tagsContainer}>            
               {
                 tagsData.map((tag, i)=><TagCard key={i} data={tag} />)
               }
               
-            </InfiniteScroll>
+            </Box>
 
         }
       </Box>
