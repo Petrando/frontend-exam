@@ -12,9 +12,9 @@ export const useStyles = makeStyles((theme)=>({
     fontWeight: "normal",
     fontSize: "30px",
     letterSpacing: "0.25px",
-    marginTop: "0px",
     textAlign: "start",
-    marginTop:"87.5px"//calc(80px + 7.5px);
+    marginTop:"85.5px",//suppose to be calc(80px + 7.5px), but since does not match figma, random number it is!
+    
   },  
   tagsContainer: {
     display: "flex",
