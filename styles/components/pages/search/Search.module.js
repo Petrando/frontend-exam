@@ -31,6 +31,11 @@ export const useStyles = makeStyles((theme)=>({
     flexWrap:"wrap",
     marginBottom:"9px",//figma 39px, searchCard margin bottom 21px
   },
+  buttonContainer: {
+    padding:"0px 0px 20px auto",
+    margin: "0px", 
+    height:"60px"
+  },
   [theme.breakpoints.down('aboveMobile')]:{
     container:{
       width: "100%",

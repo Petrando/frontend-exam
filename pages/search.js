@@ -44,13 +44,15 @@ const Search = () => {
           {
             isLoading?
             <Loading />:
-            <Button label={`${!isMaxPage?'MORE':'MAX PAGE'}`} 
-                    onClick={()=>{                                  
-                                  if(!isMaxPage){                                  
-                                    nextPage()
-                                  }
-                          }}
-            />  
+            <Box className={classes.buttonContainer}>
+              <Button label={`${!isMaxPage?'MORE':'MAX PAGE'}`} 
+                      onClick={()=>{                                  
+                                    if(!isMaxPage){                                  
+                                      nextPage()
+                                    }
+                            }}
+              />  
+            </Box>
           }
           
         </Box>
