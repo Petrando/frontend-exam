@@ -46,7 +46,7 @@ const NavMenuItem = ({menuData : {label, path}, asPath, width}) => {
           </Box>
         </Box>                  
         {
-          isActive &&
+          isActive && width > 414 &&
           <p className={classes.menuLabel}>
             {label}
           </p>

@@ -101,7 +101,11 @@ export const useStyles = makeStyles((theme)=>({
       alignItems: "flex-start"
     },  
     menuItemContainer: {
-      margin: "0px",    
+      height:"100%", 
+      display:"flex",
+      justifyContent:"center", 
+      alignItems:"center",
+      margin: "0px",          
       maxWidth: "24px", 
       "&:first-of-type": {
         margin: "0px",
