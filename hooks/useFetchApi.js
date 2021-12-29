@@ -1,28 +1,38 @@
 import {useState, useEffect} from 'react'
 
-const useFetchApi = (endpoint, query, pageChangeble = true) => {
+const useFetchApi = (endpoint, params) => {
   const [data, setData] = useState([])
   const [page, setPage] = useState(1)  
   const [isLoading, setLoading] = useState(true);
   const [isMaxPage, setIsMax] = useState(false);
 
-  useEffect(()=>{
-    fetchData();    
-  }, [page])
+  const freshPage = data.length === 0 && page === 1;
 
   useEffect(()=>{
-    async ()=>{
-      await setData([])
-      await setPage(1)
-      await setIsMax(false)
-
+    //load data only when data is empty, or fresh page...
+    if(freshPage){
       fetchData()
     }
-  }, [query, endpoint])
+  }, [data.length])
+
+  useEffect(()=>{
+    //load data when first page already loaded (not fresh page), when page changes...
+    if(!freshPage){
+      fetchData();        
+    }    
+  }, [page])
+
+  useEffect(()=>{    
+    (async ()=>{
+      await setIsMax(false)      
+      await setPage(1)
+      setData([])            
+    })()
+  }, [endpoint, params])
 
   const fetchData = async () => {    
     await setLoading(true);
-    const ApiEndpoint = pageChangeble?`${endpoint}?page=${page}&${query}`:endpoint;
+    const ApiEndpoint = `${endpoint}?page=${page}&${params}`;
     
     await fetch(ApiEndpoint)
       .then((res) => res.json())

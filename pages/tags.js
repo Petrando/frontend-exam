@@ -10,10 +10,9 @@ const Tags = () => {
   const classes = useStyles()
   const router = useRouter()
   const {pageSize, keyword} = router
-  const {data:tagsData, nextPage, isLoading, isMaxPage} = useFetchApi(
+  const {data:tagsData, isLoading } = useFetchApi(
     "https://avl-frontend-exam.herokuapp.com/api/tags",
-    `pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`,
-    false
+    `pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`
   )
 
   return (

@@ -1,10 +1,11 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import { useRouter } from 'next/router'
 import {Box} from '@mui/material'
 import Image from 'next/image'
 import { SmallButton } from '../../global/Button';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from "../../global/Loading"
+import useFetchApi from "../../../hooks/useFetchApi"
 import { useStyles } from "../../../styles/components/pages/shared/Followers.module"
 
 const Followers = () => {
@@ -18,57 +19,12 @@ const Followers = () => {
   const tabIdx = Tabs.findIndex(tab => tab.label === activeTab);
   const { link } = Tabs[tabIdx];
 
-  const [followers, setFollowers] = useState([])
-  const [page, setPage] = useState(1)  
-  const [isLoading, setLoading] = useState(true);
-  const [isMaxPage, setIsMax] = useState(false);
-
   const router = useRouter()
-  const {query:{pageSize, keyword}} = router;
-  const queryParams = `?page=${page}&pageSize=${pageSize?pageSize:15}`
+  const {query:{pageSize}} = router;
+  const queryParams = `pageSize=${pageSize?pageSize:15}`
+
+  const {data:followers, nextPage, isLoading, isMaxPage} = useFetchApi(link,queryParams)
   
-  useEffect(()=>{
-    initTabCondition();
-  }, [activeTab]);
-
-  const initTabCondition =  () => {
-    setFollowers([])
-    setPage(1)
-    setIsMax(false)
-  }
-
-  useEffect(()=>{
-    if(followers.length === 0 && page === 1 && !isMaxPage){
-      fetchData();
-    }
-  }, [followers.length, page, isMaxPage])
-  
-  const fetchData = async () => { 
-    setLoading(true);
-    await fetch(link + queryParams)
-      .then((res) => res.json())
-      .then((json) => {
-        if(json.data.length > 0){
-          if(page===1 || followers.length === 0)//page===1 or followers is empty means tab was switched...
-          {
-            setFollowers(json.data);
-          }else{
-            setFollowers(followers.concat(json.data))
-          }
-          
-        }else {
-          setIsMax(true)
-        }
-        
-      })
-      .catch(err=>{
-        console.log(err)
-      })
-
-    setLoading(false);
-    setPage(page + 1)
-  }
-
   return (
     <Box className={classes.container}>
       <Box className={classes.tabs}>
@@ -77,7 +33,11 @@ const Followers = () => {
                               <Box 
                                 className={`${classes.tabLabel} ${tab.label!==activeTab && classes.inactive}`} 
                                 key={i}
-                                onClick={()=>{setActiveTab(tab.label)}}
+                                onClick={()=>{
+                                                if(!isLoading){
+                                                  setActiveTab(tab.label)
+                                                }                                                                              
+                                              }}
                               >
                                 {tab.label}
                               </Box>
@@ -93,7 +53,7 @@ const Followers = () => {
           <InfiniteScroll
               className={classes.followersContainer}
               dataLength={followers.length} //This is important field to render the next data
-              next={fetchData}
+              next={nextPage}
               hasMore={!isMaxPage}
               loader={<Loading />}
               endMessage={
