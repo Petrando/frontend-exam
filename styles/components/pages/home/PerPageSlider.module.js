@@ -65,7 +65,8 @@ export const useStyles = makeStyles((theme)=>({
   },
   '@media screen and (min-width:476px) and (max-height:700px)': {
     sectionTitle: {
-      marginTop: "1vh"
+      marginTop: "0vh",
+      paddingTop: "0vh"
     }
   }  
 }))
