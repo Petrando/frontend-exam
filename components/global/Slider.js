@@ -28,7 +28,8 @@ const MySlider = ({ itemPerPage, setItemPerPage}) => {
 
   useEffect(()=>{
     const marginTop = width > 0 && width <= 414 ? {marginTop:'10px'} :
-                      width > 414 && height > 640 ? {marginTop:'10px'} :
+                      width > 414  && height <= 700 ? {marginTop:'10.5px'}:
+                      width > 414  && height > 700 ? {marginTop:'10px'} :
                       {}
     setMarginTop(marginTop)
   }, [width, height]);

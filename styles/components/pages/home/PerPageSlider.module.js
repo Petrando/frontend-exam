@@ -64,9 +64,14 @@ export const useStyles = makeStyles((theme)=>({
     }
   },
   '@media screen and (min-width:476px) and (max-height:700px)': {
+    container: {     
+      "& > *": {
+        marginBottom: "1vh"/*1.97044334975369vh;*/
+      }
+    },
     sectionTitle: {
-      marginTop: "0vh",
-      paddingTop: "0vh"
+      marginTop: "0.5vh",
+      padding: "1vh 0px 0px 0px"
     }
   }  
 }))
