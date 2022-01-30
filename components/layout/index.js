@@ -5,6 +5,8 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import {useStyles} from "../../styles/components/layout/Layout.module"
 import theme from "../../styles/theme"
 
+//Layout for Search page and Tags Page
+
 const Layout = ({children}) => {
   const {width} = useWindowDimensions();
   
