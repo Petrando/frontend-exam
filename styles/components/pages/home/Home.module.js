@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme)=>({
   },  
   [theme.breakpoints.down('midScreen')]: {
     container: {
-      maxHeight: "calc(100vh - 66px)",
+      maxHeight: "calc(100% - 66px)",
       padding: "0px"
     }
   }

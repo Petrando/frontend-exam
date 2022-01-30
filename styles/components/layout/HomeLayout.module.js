@@ -24,7 +24,6 @@ return ({
       //maxHeight: "100vh",
       maxHeight: "100%",      
       flexDirection: "column-reverse",
-      overflow:"hidden",
     },
     main:{
       width: "100%",
