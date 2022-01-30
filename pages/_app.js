@@ -16,6 +16,19 @@ export default function MyApp(props) {
     }
   }, []);
 
+  React.useEffect(() => {
+    listenToResize();
+    window.addEventListener("resize", listenToResize);
+
+    return ()=>window.removeEventListener("resize", listenToResize);
+  }, [])
+
+  const listenToResize = () => {
+    let vh = window?window.innerHeight * 0.01:0;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
   return (
     <React.Fragment>
       <Head>
