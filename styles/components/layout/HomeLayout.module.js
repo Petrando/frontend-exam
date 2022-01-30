@@ -30,8 +30,10 @@ return ({
     },
     main:{
       width: "100%",
-      maxHeight: "calc(100% - 66px)",
-      flex:"1 1 calc(100% - 66px)",
+      maxHeight: "calc(100vh - 66px)",
+      maxHeight: "calc((var(--vh, 1vh) * 100) - 66px)",
+      flex:"1 1 calc(100vh - 66px)",
+      flex:"1 1 calc((var(--vh, 1vh) * 100) - 66px)",
       display: "flex",
       flexDirection: "column"
     }      
