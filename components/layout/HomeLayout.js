@@ -23,8 +23,15 @@ const LayoutContent = ({children}) => {
   return (
     <>
     <div>
-          <h3>Test main page</h3>
-        </div>
+      <Box className={classes.container}>      
+        <Navbar />
+        <Box className={classes.main}>
+          <WithFollowersLayout atHome={true}>
+            {children}
+          </WithFollowersLayout>
+        </Box> 
+      </Box>
+    </div>
     <style global jsx>{`
      html,
       body,
@@ -32,6 +39,8 @@ const LayoutContent = ({children}) => {
       div#__next,
       div#__next > div {
         height: 100%;
+        margin: 0px;
+        padding: 0px;
       }
   `}</style>
     </>
