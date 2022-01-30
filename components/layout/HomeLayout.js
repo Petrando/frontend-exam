@@ -21,7 +21,14 @@ const LayoutContent = ({children}) => {
   const {height} = useWindowDimensions();
 
   return (
-    <Box className={`${classes.container} containerHeight`}>      
+    <Box style={{width:"100vw", height:"100vh"}}>
+          <h3>Test main page</h3>
+        </Box>
+  )
+}
+
+/*
+<Box className={`${classes.container} containerHeight`}>      
         <Box style={{width:"100vw", height:"100vh"}}>
           <h3>Test main page</h3>
         </Box>
@@ -33,10 +40,7 @@ const LayoutContent = ({children}) => {
             }
           }
         `}</style>  
-    </Box>
-  )
-}
-
+    </Box>*/
 /*
 <Navbar />
         <Box className={classes.main}>
