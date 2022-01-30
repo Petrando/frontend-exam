@@ -19,11 +19,11 @@ return ({
       height: "100vh",
       height: "calc(var(--vh, 1vh) * 100)",
       //height: "100%", 
-      /*maxHeight: "-webkit-fill-available",
+      maxHeight: "-webkit-fill-available",
       maxHeight: "-moz-available",
       maxHeight: "fill-available",
       maxHeight: "100vh",
-      maxHeight: "calc(var(--vh, 1vh) * 100)",*/
+      maxHeight: "calc(var(--vh, 1vh) * 100)",
       //maxHeight: "100%",      
       flexDirection: "column-reverse",
     },
