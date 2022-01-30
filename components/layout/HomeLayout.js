@@ -22,12 +22,9 @@ const LayoutContent = ({children}) => {
 
   return (
     <Box className={`${classes.container} containerHeight`}>      
-        <Navbar />
-        <Box className={classes.main}>
-          <WithFollowersLayout atHome={true}>
-            {children}
-          </WithFollowersLayout>
-        </Box>    
+        <Box style={{width:"100vw", height:"100vh"}}>
+          <h3>Test main page</h3>
+        </Box>
         <style jsx>{`        
           @media (max-width:414px){
             .containerHeight {
@@ -39,4 +36,12 @@ const LayoutContent = ({children}) => {
     </Box>
   )
 }
+
+/*
+<Navbar />
+        <Box className={classes.main}>
+          <WithFollowersLayout atHome={true}>
+            {children}
+          </WithFollowersLayout>
+        </Box>    */
 export default HomeLayout;
