@@ -49,17 +49,16 @@ export const useStyles = makeStyles((theme)=>({
     container: {
       /*height: calc(51.72413793103448vh - 0.25px) !important;*/      
       flex: "1 2 51.72413793103448vh",
-      flex: "1 2 calc((var(--vh, 1vh) * 51.72413793103448)",
-      //backgroundColor:"red",
+      flex: "1 2 calc(var(--vh, 1vh) * 51.72413793103448)",
       "& > *": {
         marginBottom: "2.70935960591133vh",/*1.97044334975369vh;*/
-        marginBottom: "calc((var(--vh, 1vh) * 2.70935960591133)"
+        marginBottom: "calc(var(--vh, 1vh) * 2.70935960591133)"
       }
     },  
     sectionTitle: {
       padding: "0px",
       marginTop: "4.1871921182266vh",
-      marginTop: "calc((var(--vh, 1vh) * 4.1871921182266)"
+      marginTop: "calc(var(--vh, 1vh) * 4.1871921182266)"
     } 
   },
   '@media screen and (min-width:415px) and (max-width:475px) and (max-height:700px)':{

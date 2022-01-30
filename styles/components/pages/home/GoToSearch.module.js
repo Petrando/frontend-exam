@@ -21,11 +21,10 @@ export const useStyles = makeStyles((theme)=>({
       flexDirection: "column",
       justifyContent: "flex-end",
       alignItems: "center",
-      //backgroundColor:"red",
       "& > *:first-child" :{
         position: "relative",
         bottom: "calc(66px + 2.95566502463054vh)",
-        bottom: "calc(66px + (var(--vh, 1vh) * 2.95566502463054))"
+        bottom: "calc(var(--vh, 1vh) * 2.95566502463054)"
       }
     }
   }
