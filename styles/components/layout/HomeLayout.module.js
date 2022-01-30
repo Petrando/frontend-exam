@@ -13,9 +13,18 @@ return ({
   },
   [theme.breakpoints.down('midScreen')]:{
     container: {
-      height: "calc(100vh - calc(100vh - 100%))",
+      height: "-webkit-fill-available",
+      height: "-moz-available",
+      height: "fill-available",
+      height: "100vh",
+      height: "100%", 
+      maxHeight: "-webkit-fill-available",
+      maxHeight: "-moz-available",
+      maxHeight: "fill-available",
+      maxHeight: "100vh",
+      maxHeight: "100%",      
       flexDirection: "column-reverse",
-      overflow:"hidden"
+      overflow:"hidden",
     },
     main:{
       width: "100%",
