@@ -26,7 +26,6 @@ return ({
       maxHeight: "calc(var(--vh, 1vh) * 100)",
       //maxHeight: "100%",      
       flexDirection: "column-reverse",
-      overflow:"hidden"
     },
     main:{
       width: "100%",
