@@ -12,17 +12,20 @@ export const useStyles = makeStyles((theme)=>({
     }
   },
   [theme.breakpoints.down('midScreen')]: {
-    container: {
+    container: {//(var(--vh, 1vh) * 100)
       /*height: 25.86206896551724vh !important;*/
       flex:"1 1 25.86206896551724vh",
+      flex:"1 1 calc(var(--vh, 1vh) * 25.86206896551724)",
       paddingTop: "0px",
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-end",
       alignItems: "center",
+      //backgroundColor:"red",
       "& > *:first-child" :{
         position: "relative",
-        bottom: "calc(66px + 2.95566502463054vh)"
+        bottom: "calc(66px + 2.95566502463054vh)",
+        bottom: "calc(66px + (var(--vh, 1vh) * 2.95566502463054))"
       }
     }
   }

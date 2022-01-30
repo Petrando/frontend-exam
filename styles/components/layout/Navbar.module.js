@@ -95,10 +95,12 @@ export const useStyles = makeStyles((theme)=>({
     },  
     logoNotAtNavbar: {
       flex: "1 5 8.62068965517241vh",
+      flex: "1 5 calc(var(--vh, 1vh) * 8.62068965517241)",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "flex-start"
+      alignItems: "flex-start",
+      //backgroundColor:"lightblue"
     },  
     menuItemContainer: {
       height:"100%", 

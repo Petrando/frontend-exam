@@ -36,11 +36,13 @@ export const useStyles = makeStyles((theme)=>({
     container: {
       /*height:calc(22.41379310344828vh - 8.62068965517241vh) !important;*/
       flex: "1 1 calc(22.41379310344828vh - 8.62068965517241vh)",
+      flex: "1 1 calc((var(--vh, 1vh) * 22.41379310344828) - (var(--vh, 1vh) * 8.62068965517241))",
       justifyContent: "flex-end",
       borderBottom: "0px solid transparent"
     },  
     sectionTitle: {
-      marginBottom: "2.70935960591133vh"/*1.97044334975369vh;*/
+      marginBottom: "2.70935960591133vh",/*1.97044334975369vh;*/
+      marginBottom: "calc((var(--vh, 1vh) * 2.70935960591133)"
     }
   }
 }))
