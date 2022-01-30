@@ -21,7 +21,7 @@ const LayoutContent = ({children}) => {
   const {height} = useWindowDimensions();
 
   return (
-    <Box className={classes.container}>      
+    <Box className={`${classes.container} containerHeight`}>      
         <Navbar />
         <Box className={classes.main}>
           <WithFollowersLayout atHome={true}>
@@ -31,6 +31,7 @@ const LayoutContent = ({children}) => {
         <style jsx>{`        
           @media (max-width:414px){
             .containerHeight {
+              height:  ${height}px;
               max-height: ${height}px !important;
             }
           }
