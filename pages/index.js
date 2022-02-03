@@ -10,15 +10,15 @@ import { FetchContext } from '../context/FetchContext.js';
 import { useStyles } from '../styles/components/pages/home/Home.module.js';
 
 export default function Home() {
-  const classes = useStyles();
+  const classes = useStyles();  
 
-  //additional state to handle send back params..
-  const [initByRouter, setInitByRouter] = useState(false)
-  
   const [itemPerPage, setItemPerPage] = useState(15);
   const [searchText, setSearchText] = useState('');
   const [count, setCount] = useState(0);
   const router = useRouter();
+
+  //additional state to handle sent back params..
+  const [initByRouter, setInitByRouter] = useState(false);
 
   useEffect(()=>{    
     if(initByRouter){
@@ -54,7 +54,7 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    router.push(`/search?keyword=${searchText}&pageSize=${itemPerPage}`)
+    router.push(`/search?keyword=${searchText}&pageSize=${itemPerPage}`);
   }
 
   return (

@@ -15,7 +15,7 @@ const Search = () => {
 
   const router = useRouter();
   const { pageSize, keyword } = router.query;
-  const { data:searchData, nextPage, isLoading, isMaxPage} = 
+  const { data:searchData, nextPage, isLoading, isMaxPage } = 
       useFetchApi(
         'https://avl-frontend-exam.herokuapp.com/api/users/all',
         `pageSize=${pageSize?pageSize:15}&keyword=${keyword?keyword:''}`

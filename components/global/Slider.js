@@ -3,15 +3,14 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.js';
 
-const marksFont = {
-  fontStyle: 'normal',
-  fontWeight: '500',
-  fontSize: '16px',
-  letterSpacing: '0.15px'
-}
-
 export const PageSizeSlider = ({ itemPerPage, setItemPerPage}) => {
   const {width, height} = useWindowDimensions();
+  const marksFont = {
+    fontStyle: 'normal',
+    fontWeight: '500',
+    fontSize: '16px',
+    letterSpacing: '0.15px'
+  };
   
   const [marginTop, setMarginTop] = useState({});
   const [currentValue, setCurrentValue] = useState(5);
