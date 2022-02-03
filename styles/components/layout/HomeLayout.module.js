@@ -14,32 +14,38 @@ return ({
   },
   [theme.breakpoints.down('largeScreen')]:{
     container: {
-      height: "-webkit-fill-available",
-      height: "-moz-available",
-      height: "fill-available",
-      height: "100vh",
-      height: "calc(var(--vh, 1vh) * 100)",
-      //height: "100%", 
-      maxHeight: "-webkit-fill-available",
-      maxHeight: "-moz-available",
-      maxHeight: "fill-available",
-      maxHeight: "100vh",
-      maxHeight: "calc(var(--vh, 1vh) * 100)",
-      //maxHeight: "100%",
-    }   
+      height: '-webkit-fill-available',
+      height: '-moz-available',
+      height: 'fill-available',
+      height: '100vh',
+      height: 'calc(var(--vh, 1vh) * 100)',
+      //height: '100%', 
+      maxHeight: '-webkit-fill-available',
+      maxHeight: '-moz-available',
+      maxHeight: 'fill-available',
+      maxHeight: '100vh',
+      maxHeight: 'calc(var(--vh, 1vh) * 100)',
+      //maxHeight: '100%',
+    },
+    ['@media screen and (max-height:350px']:{
+      container: {
+        height:'100vh',
+        maxHeight: 'auto',
+      }
+    },   
   },
   [theme.breakpoints.down('midScreen')]:{    
     container :{
-      flexDirection: "column-reverse",
+      flexDirection: 'column-reverse',
     },
     main:{
-      width: "100%",
-      maxHeight: "calc(100vh - 66px)",
-      maxHeight: "calc((var(--vh, 1vh) * 100) - 66px)",
-      flex:"1 1 calc(100vh - 66px)",
-      flex:"1 1 calc((var(--vh, 1vh) * 100) - 66px)",
-      display: "flex",
-      flexDirection: "column"
+      width: '100%',
+      maxHeight: 'calc(100vh - 66px)',
+      maxHeight: 'calc((var(--vh, 1vh) * 100) - 66px)',
+      flex:'1 1 calc(100vh - 66px)',
+      flex:'1 1 calc((var(--vh, 1vh) * 100) - 66px)',
+      display: 'flex',
+      flexDirection: 'column'
     }      
   }
 })})
