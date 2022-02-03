@@ -4,26 +4,8 @@ export const useStyles = makeStyles((theme)=>{
 return ({
   container:{
     display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'stretch',
-  },
-  main: {
-    flex:'1 1 calc(100% - 80px)',
-    width: 'calc(100% - 80px)',
-    height:'100%',
-    paddingTop: '0px'
-  },
-  [theme.breakpoints.down('midScreen')]:{    
-    main:{
-      width: "100%",
-      maxHeight: "calc(100vh - 66px)",
-      maxHeight: "calc((var(--vh, 1vh) * 100) - 66px)",
-      flex:"1 1 calc(100vh - 66px)",
-      flex:"1 1 calc((var(--vh, 1vh) * 100) - 66px)",
-      display: "flex",
-      flexDirection: "column"
-    }      
-  },
-  [theme.breakpoints.down('largeScreen')]:{
-    container: {
+    height:'auto',
+    [theme.breakpoints.down('largeScreen')]:{
       height: "-webkit-fill-available",
       height: "-moz-available",
       height: "fill-available",
@@ -35,8 +17,27 @@ return ({
       maxHeight: "fill-available",
       maxHeight: "100vh",
       maxHeight: "calc(var(--vh, 1vh) * 100)",
-      //maxHeight: "100%",      
+      //maxHeight: "100%",   
+    }
+  },
+  main: {
+    flex:'1 1 calc(100% - 80px)',
+    width: 'calc(100% - 80px)',
+    height:'100%',
+    paddingTop: '0px'
+  },
+  [theme.breakpoints.down('midScreen')]:{    
+    container :{
       flexDirection: "column-reverse",
     },
+    main:{
+      width: "100%",
+      maxHeight: "calc(100vh - 66px)",
+      maxHeight: "calc((var(--vh, 1vh) * 100) - 66px)",
+      flex:"1 1 calc(100vh - 66px)",
+      flex:"1 1 calc((var(--vh, 1vh) * 100) - 66px)",
+      display: "flex",
+      flexDirection: "column"
+    }      
   }
 })})
