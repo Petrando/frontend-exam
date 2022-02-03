@@ -27,7 +27,7 @@ return ({
       maxHeight: 'calc(var(--vh, 1vh) * 100)',
       //maxHeight: '100%',
     },
-    ['@media screen and (max-height:350px)']:{
+    '@media screen and (max-height:350px)':{
       container: {
         height:'100vh',
         maxHeight: 'auto',
