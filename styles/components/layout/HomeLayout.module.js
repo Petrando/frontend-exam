@@ -5,7 +5,15 @@ return ({
   container:{
     display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'stretch',
     height:'auto',
-    [theme.breakpoints.down('largeScreen')]:{
+  },
+  main: {
+    flex:'1 1 calc(100% - 80px)',
+    width: 'calc(100% - 80px)',
+    height:'100%',
+    paddingTop: '0px'
+  },
+  [theme.breakpoints.down('largeScreen')]:{
+    container: {
       height: "-webkit-fill-available",
       height: "-moz-available",
       height: "fill-available",
@@ -17,14 +25,8 @@ return ({
       maxHeight: "fill-available",
       maxHeight: "100vh",
       maxHeight: "calc(var(--vh, 1vh) * 100)",
-      //maxHeight: "100%",   
-    }
-  },
-  main: {
-    flex:'1 1 calc(100% - 80px)',
-    width: 'calc(100% - 80px)',
-    height:'100%',
-    paddingTop: '0px'
+      //maxHeight: "100%",
+    }   
   },
   [theme.breakpoints.down('midScreen')]:{    
     container :{
