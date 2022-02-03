@@ -24,7 +24,7 @@ export const Layout = ({children}) => {
 const LayoutContent = ({children, width}) => {
   const classes = useStyles();
 
-  const navElement =  width > 414?<Navbar />:<BackToHome />;
+  const navElement =  width > 600 ?<Navbar />:<BackToHome />;
 
   return (
     <Box className={classes.container}>

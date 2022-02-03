@@ -40,7 +40,6 @@ export const useStyles = makeStyles((theme)=>({
   },
   '@media screen and (max-width:540px)':{
     card: {
-      height: '282px',
       width: '100%',
       margin: '0px 0px 4.92610837438424vh',
     },
@@ -53,6 +52,16 @@ export const useStyles = makeStyles((theme)=>({
     username : {
       margin:'4.75px 0px 0px',
     }
+  },
+  '@media screen and (max-width:414px)':{
+    card: {
+      height: '282px',
+    },
+  },
+  '@media screen and (min-width:415px) and (max-width:540px)':{
+    card: {
+      height: '220px',
+    },
   },
   '@media screen and (min-width:541px) and (max-width:768px)': {
     card: {
