@@ -1,21 +1,21 @@
-import { useContext } from "react";
-import Link from "next/link"
-import { useRouter } from "next/router";
-import {Box} from '@mui/material'
-import MenuIcon from "../svg-shapes/MenuIcon";
-import NavLogo from "../svg-shapes/NavLogo";
-import BlueDot from "../svg-shapes/BlueDot";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-import FetchContext from "../../context/FetchContext";
-import {useStyles} from "../../styles/components/layout/Navbar.module"
+import { useContext } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Box } from '@mui/material';
+import { MenuIcon } from '../svg-shapes/MenuIcon.js';
+import { NavLogo } from '../svg-shapes/NavLogo.js';
+import { BlueDot } from '../svg-shapes/BlueDot.js';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions.js';
+import { FetchContext } from '../../context/FetchContext.js';
+import { useStyles } from '../../styles/components/layout/Navbar.module.js';
 
-const NavMenu = [{label:"Home", path:"/"}, {label:"Tags", path:"/tags"}]
-
-const Navbar = () => {
+export const Navbar = () => {
   const classes = useStyles()
   const router = useRouter();
   const { asPath } = router;
   const {width} = useWindowDimensions();
+
+  const NavMenu = [{label:'Home', path:'/'}, {label:'Tags', path:'/tags'}];
 
   return (    
     <nav className={classes.navbar}>
@@ -23,17 +23,32 @@ const Navbar = () => {
         width>414 && <NavLogo atNavbar={true} />
       }    
       {
-        NavMenu.map(d => <NavMenuItem menuData={d} key={d.label} asPath={asPath} width={width} />)
+        NavMenu.map(
+          d => 
+              <NavMenuItem 
+                menuData={d} 
+                key={d.label} 
+                asPath={asPath} 
+                width={width} 
+              />
+        )
       }
     </nav>
-  )
+  );
 }
 
-const NavMenuItem = ({menuData : {label, path}, asPath, width}) => {
-  const classes = useStyles()
-  const isActive = path === "/"?asPath==="/" || asPath.startsWith("/?") || asPath.startsWith("/search?") : 
-                                asPath.startsWith(path+"?") || asPath === path;
-  const showBlueDot = !asPath.startsWith("/tags") && path==="/tags" && width > 414;
+const NavMenuItem = ({menuData , asPath, width}) => {
+  const classes = useStyles();
+
+  const { label, path } = menuData;
+  const isActive = 
+      path === '/'? 
+          asPath==='/' || 
+              asPath.startsWith('/?') || 
+                  asPath.startsWith('/search?') : 
+                      asPath.startsWith(path+'?') || asPath === path;
+  const showBlueDot = 
+      !asPath.startsWith('/tags') && path==='/tags' && width > 414;
   const fetchParams = useContext(FetchContext);
 
   return (
@@ -55,5 +70,3 @@ const NavMenuItem = ({menuData : {label, path}, asPath, width}) => {
     </Link>
   )
 }
-
-export default Navbar;

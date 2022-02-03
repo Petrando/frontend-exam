@@ -1,7 +1,7 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react';
 
-const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState({width:0, height:0});
+export const useWindowDimensions = () => {
+  const [windowDimensions, setWindowDimensions] = useState({ width:0, height:0 });
     
   useEffect(()=>{
     listenToResize();
@@ -11,11 +11,9 @@ const useWindowDimensions = () => {
   }, []);
 
   const listenToResize = () => {
-      const {innerWidth:width, innerHeight:height} = window;
-      setWindowDimensions({width, height});
+      const { innerWidth:width, innerHeight:height } = window;
+      setWindowDimensions({ width, height });
   }
 
   return windowDimensions;
 }
-
-export default useWindowDimensions;

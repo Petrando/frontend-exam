@@ -1,55 +1,54 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import {Box} from '@mui/material'
-import HomeLayout from '../components/layout/HomeLayout'
-import NavLogo from '../components/svg-shapes/NavLogo'
-import SearchInput from '../components/pages/home/SearchInput'
-import PerPageSlider from '../components/pages/home/PerPageSlider'
-import GoToSearch from '../components/pages/home/GoToSearch'
-import FetchContext from "../context/FetchContext"
-import {useStyles} from '../styles/components/pages/home/Home.module'
+import { Box } from '@mui/material';
+import { HomeLayout } from '../components/layout/HomeLayout.js';
+import { NavLogo } from '../components/svg-shapes/NavLogo.js'
+import { SearchInput } from '../components/pages/home/SearchInput.js';
+import { PerPageSlider } from '../components/pages/home/PerPageSlider.js';
+import { GoToSearch } from '../components/pages/home/GoToSearch.js';
+import { FetchContext } from '../context/FetchContext.js';
+import { useStyles } from '../styles/components/pages/home/Home.module.js';
 
 export default function Home() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   //additional state to handle send back params..
   const [initByRouter, setInitByRouter] = useState(false)
   
   const [itemPerPage, setItemPerPage] = useState(15);
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [count, setCount] = useState(0);
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(()=>{    
     if(initByRouter){
       fetchResult();
     }    
-  }, [searchText, initByRouter])
+  }, [searchText, initByRouter]);
 
-  useEffect(()=>{//if there are router query params sent back from backToHome, proccess them here
+  //if there are router query params sent back from backToHome, handle them here
+  useEffect(()=>{
     (async () => {
       if(router.query.keyword){
         const {keyword, pageSize} = router.query;
-        await setSearchText(keyword)     
-        //fetchResult()
-        //setItemPerPage(router.query.pageSize)
+        await setSearchText(keyword);
       }else {
-        await setSearchText('')
+        await setSearchText('');
       }
 
       setInitByRouter(true);
-    })()
+    })();
     
-  }, [])
+  }, []);
 
   const fetchResult = () => {
-    fetch("https://avl-frontend-exam.herokuapp.com/api/users/all?keyword=" + searchText)
+    fetch(`https://avl-frontend-exam.herokuapp.com/api/users/all?keyword=${searchText}`)
       .then((res) => res.json())
       .then((json) => {
-        setCount(json.total)
+        setCount(json.total);
       })
       .catch(err=>{
-        console.log(err)
+        console.log(err);
       }) 
   }
 
@@ -62,13 +61,17 @@ export default function Home() {
     <FetchContext.Provider value={{keyword:searchText, pageSize:itemPerPage}}>
       <HomeLayout>     
         <Box 
-          component="form"
+          component='form'
           className={classes.container}
           onSubmit={ (e) => {handleSubmit(e)} }
         >
           <NavLogo atNavbar={false} />
           <SearchInput searchText={searchText} setSearchText={setSearchText} />
-          <PerPageSlider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} count={count} />
+          <PerPageSlider 
+            itemPerPage={itemPerPage} 
+            setItemPerPage={setItemPerPage} 
+            count={count} 
+          />
           <GoToSearch />                     
         </Box> 
       </HomeLayout>

@@ -1,8 +1,8 @@
-import {Box} from '@mui/material'
-import {useStyles} from "../../../styles/components/pages/tags/TagCard.module"
+import { Box } from '@mui/material';
+import { useStyles } from '../../../styles/components/pages/tags/TagCard.module.js';
 
-const TagCard = ({data:{name, count}}) => {
-  const classes = useStyles()
+export const TagCard = ({data:{name, count}}) => {
+  const classes = useStyles();
   
   return (
     <Box className={classes.card}>
@@ -22,7 +22,5 @@ const TagCard = ({data:{name, count}}) => {
         {count}{' '}Questions
       </p>
     </Box>
-  )
+  );
 }
-
-export default TagCard;

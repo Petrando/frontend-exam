@@ -1,18 +1,18 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@mui/styles';
-import theme from '../styles/theme';
+
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang='en'>
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={'#FFFFFF'} />
+          <meta name='theme-color' content={'#FFFFFF'} />
           <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
+            rel='stylesheet'
+            href='https://fonts.googleapis.com/css?family=Ubuntu&display=swap'
           />
         </Head>
         <body>

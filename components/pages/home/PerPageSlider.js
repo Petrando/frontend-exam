@@ -1,9 +1,10 @@
-import {Box} from '@mui/material'
-import { useStyles} from "../../../styles/components/pages/home/PerPageSlider.module"
-import Slider from "../../global/Slider"
+import { Box } from '@mui/material';
+import { useStyles} from '../../../styles/components/pages/home/PerPageSlider.module.js';
+import { PageSizeSlider } from '../../global/Slider.js';
 
-const PerPageSlider = ({itemPerPage, setItemPerPage, count}) => {
-  const classes = useStyles()
+export const PerPageSlider = ({ itemPerPage, setItemPerPage, count}) => {
+  const classes = useStyles();
+
   return (
     <Box className={classes.container}>
       <h4 className={classes.sectionTitle}>{itemPerPage} Of Results Per Page</h4>
@@ -12,9 +13,7 @@ const PerPageSlider = ({itemPerPage, setItemPerPage, count}) => {
           {count}<span className={classes.result}>results</span>
         </h3>        
       </Box>
-      <Slider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} />
+      <PageSizeSlider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} />
     </Box>
-  )
+  );
 }
-
-export default PerPageSlider;

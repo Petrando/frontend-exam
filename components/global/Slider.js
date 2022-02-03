@@ -1,68 +1,71 @@
-import { useEffect, useState } from "react";
-import Slider from "rc-slider";
-import "rc-slider/assets/index.css";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { useEffect, useState } from 'react';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions.js';
 
 const marksFont = {
-  fontStyle: "normal",
-  fontWeight: "500",
-  fontSize: "16px",
-  //line-height: 150%;
-  /* identical to box height, or 24px */  
-  letterSpacing: "0.15px"
+  fontStyle: 'normal',
+  fontWeight: '500',
+  fontSize: '16px',
+  letterSpacing: '0.15px'
 }
 
-const MySlider = ({ itemPerPage, setItemPerPage}) => {
-  const {width, height} = useWindowDimensions()
+export const PageSizeSlider = ({ itemPerPage, setItemPerPage}) => {
+  const {width, height} = useWindowDimensions();
   
   const [marginTop, setMarginTop] = useState({});
   const [currentValue, setCurrentValue] = useState(5);
   const [perPageMarks, setPageMarks] = useState({
-    1: {style:{ ...marginTop, ...marksFont}, label:"3"},
-    2: {style:{ ...marginTop, ...marksFont}, label:"6"},
-    3: {style:{ ...marginTop, ...marksFont}, label:"9"},
-    4: {style:{ ...marginTop, ...marksFont}, label:"12"},
-    5: {style:{ ...marginTop, ...marksFont, color:"#FFFFFF"}, label:"15"},
-    6: {style:{ ...marginTop, ...marksFont}, label:"50"}
+    1: {style:{ ...marginTop, ...marksFont}, label:'3'},
+    2: {style:{ ...marginTop, ...marksFont}, label:'6'},
+    3: {style:{ ...marginTop, ...marksFont}, label:'9'},
+    4: {style:{ ...marginTop, ...marksFont}, label:'12'},
+    5: {style:{ ...marginTop, ...marksFont, color:'#FFFFFF'}, label:'15'},
+    6: {style:{ ...marginTop, ...marksFont}, label:'50'}
   })
 
   useEffect(()=>{
     const marginTop = width > 0 && width <= 414 ? {marginTop:'10px'} :
-                      width > 414  && height <= 700 ? {marginTop:'10.5px'}:
-                      width > 414  && height > 700 ? {marginTop:'10px'} :
-                      {}
-    setMarginTop(marginTop)
+                          width > 414  && height <= 700 ? 
+                              { marginTop:'10.5px' } :
+                                  width > 414  && height > 700 ? 
+                                      {marginTop:'10px'} :
+                                          {}
+
+    setMarginTop(marginTop);
   }, [width, height]);
 
   useEffect(()=>{
-    let updatedMarks = {}
+    let updatedMarks = {};
+
     for(let prop in perPageMarks){
-      const style = perPageMarks[prop].style.hasOwnProperty('color')?{...marginTop, ...marksFont, color:"#FFFFFF"}:
-                                                                     {...marginTop, ...marksFont}       
+      const style = perPageMarks[prop].style.hasOwnProperty('color') ?
+          { color:'#FFFFFF', ...marginTop, ...marksFont, } :
+              {...marginTop, ...marksFont}       
 
       const label = perPageMarks[prop].label;
-      updatedMarks[prop] = {style, label}
+      updatedMarks[prop] = {style, label};
     }
-    setPageMarks(updatedMarks)
-  }, [marginTop])
 
-  useEffect(()=>{
-
-  }, [itemPerPage])
+    setPageMarks(updatedMarks);
+  }, [ marginTop] );
 
   const changeValue = (newValue) => {
     setCurrentValue(newValue);
-    setItemPerPage(parseInt(perPageMarks[newValue].label))
-    let updatedMarks = {}
-    for(let prop in perPageMarks){
-      
-      const style = parseInt(prop) === newValue?{...marginTop, ...marksFont, color:"#FFFFFF"}:
-                                                {...marginTop, ...marksFont };
+    setItemPerPage(parseInt(perPageMarks[newValue].label));
+    let updatedMarks = {};
+
+    for(let prop in perPageMarks) {  
+      const style = parseInt(prop) === newValue ?
+          {...marginTop, ...marksFont, color:'#FFFFFF'} :
+              {...marginTop, ...marksFont };
+                                                
       const label = perPageMarks[prop].label;
 
-      updatedMarks[prop] = {style, label}
+      updatedMarks[prop] = { style, label };
     }
-    setPageMarks(updatedMarks)
+
+    setPageMarks(updatedMarks);
   }
 
   return (
@@ -73,13 +76,20 @@ const MySlider = ({ itemPerPage, setItemPerPage}) => {
       step={null}
       onChange={(e) => {changeValue(parseInt(e))}}
       marks={perPageMarks}
-      style={{ width: "100%" }}
+      style={{ width: '100%' }}
       dotStyle={{opacity:0}}
-      trackStyle={{borderRadius:'20px', height:'6px', backgroundImage:'linear-gradient(to right, #FF5C01, #FFD25F)'}}
+      trackStyle={{
+          borderRadius:'20px', 
+          height:'6px', 
+          backgroundImage:'linear-gradient(to right, #FF5C01, #FFD25F)'
+      }}
       railStyle={{borderRadius:'20px', height:'6px'}}
-      handleStyle={{width:'22.5px', height:'22.5px', background:'#1B1B1B', border:'6px solid #FFD05D'}}      
+      handleStyle={{
+          width:'22.5px', 
+          height:'22.5px', 
+          background:'#1B1B1B', 
+          border:'6px solid #FFD05D'
+      }}      
     />
-  )
+  );
 }
-
-export default MySlider;

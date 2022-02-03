@@ -1,34 +1,30 @@
-import {Box, ThemeProvider} from '@mui/material'
-import Navbar from "./Navbar";
-import BackToHome from "../pages/shared/BackToHome";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
-import {useStyles} from "../../styles/components/layout/Layout.module"
-import theme from "../../styles/theme"
+import { Box, ThemeProvider } from '@mui/material';
+import { Navbar } from './Navbar.js';
+import { BackToHome } from '../pages/shared/BackToHome.js';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions.js';
+import { useStyles } from '../../styles/components/layout/Layout.module.js';
+import theme from '../../styles/theme';//have to use default import
 
 //Layout for Search page and Tags Page
-
-const Layout = ({children}) => {
+export const Layout = ({children}) => {
   const {width} = useWindowDimensions();
   
   return (
-    <>
-    {
+    <>{
       width > 0 &&
-      <ThemeProvider theme={theme} >        
-          <LayoutContent width={width}>
-            {children}    
-          </LayoutContent>        
-      </ThemeProvider>
-    }
-    </> 
-
-  )
+          <ThemeProvider theme={theme} >        
+            <LayoutContent width={width}>
+              {children}    
+            </LayoutContent>        
+          </ThemeProvider>
+    }</> 
+  );
 }
 
 const LayoutContent = ({children, width}) => {
   const classes = useStyles();
 
-  const navElement =  width > 414?<Navbar />:<BackToHome />
+  const navElement =  width > 414?<Navbar />:<BackToHome />;
 
   return (
     <Box className={classes.container}>
@@ -37,7 +33,6 @@ const LayoutContent = ({children, width}) => {
         {children}
       </Box>
     </Box>
-)}
-
-export default Layout;
+ );
+}
 

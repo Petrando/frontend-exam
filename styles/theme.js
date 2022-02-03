@@ -15,7 +15,8 @@ const theme = createTheme({
   color:'#FFFFFF',
   backgroundColor:'#121212',
   padding:0,
-  margin:0
-})
+  margin:0,
+});
 
+//Have to use default export, otherwise theme breakpoints cannot be read
 export default theme;

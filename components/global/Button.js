@@ -1,16 +1,17 @@
-import { useContext } from 'react'
-import FetchContext from '../../context/FetchContext'
-import Link from "next/link";
+import { useContext } from 'react';
+import FetchContext from '../../context/FetchContext';
+import Link from 'next/link';
 import { Button as MuiButton } from '@mui/material';
-import {useStyles} from "../../styles/components/global/Button.module"
+import { useStyles } from '../../styles/components/global/Button.module.js';
 
-const Button = ({label, onClick}) => {
+export const Button = ({label, onClick}) => {
   const classes = useStyles();
+
   return (
     <button className={classes.button} onClick={onClick}>
       {label}
     </button>
-  )
+  );
 }
 
 export const SubmitButton = ({label}) => {
@@ -23,7 +24,7 @@ export const SubmitButton = ({label}) => {
     >
       {label}
     </MuiButton> 
-  )
+  );
 }
 
 export const LinkButton = ({label, href}) => {
@@ -36,7 +37,7 @@ export const LinkButton = ({label, href}) => {
         {label}
       </a>
     </Link>
-  )
+  );
 }
 
 export const SmallButton = ({label, variant}) => {
@@ -45,7 +46,5 @@ export const SmallButton = ({label, variant}) => {
     <button className={`${classes.smallButton} ${variant==='contained'?classes.smallButtonContained:classes.smallButtonOutlined}`}>
       {label}
     </button>
-  )
+  );
 }
-
-export default Button;

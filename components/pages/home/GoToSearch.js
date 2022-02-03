@@ -1,13 +1,12 @@
-import Button, { LinkButton, SubmitButton} from "../../global/Button"
-import {useStyles} from "../../../styles/components/pages/home/GoToSearch.module"
+import { SubmitButton} from '../../global/Button.js';
+import { useStyles } from '../../../styles/components/pages/home/GoToSearch.module.js';
 
-const GoToSearch = () => {
-  const classes = useStyles()
+export const GoToSearch = () => {
+  const classes = useStyles();
+
   return (
     <div className={classes.container}>
-      <SubmitButton label="SEARCH" />
+      <SubmitButton label='SEARCH' />
     </div>
-  )
+  );
 }
-
-export default GoToSearch;

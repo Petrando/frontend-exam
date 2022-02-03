@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react';
 
-const useFetchApi = (endpoint, params) => {
-  const [data, setData] = useState([])
-  const [page, setPage] = useState(1)  
+export const useFetchApi = ( endpoint, params ) => {
+  const [data, setData] = useState([]);
+  const [page, setPage] = useState(1);  
   const [isLoading, setLoading] = useState(true);
   const [isMaxPage, setIsMax] = useState(false);
 
@@ -11,24 +11,24 @@ const useFetchApi = (endpoint, params) => {
   useEffect(()=>{
     //load data only when data is empty, or fresh page...
     if(freshPage){
-      fetchData()
+      fetchData();
     }
-  }, [data.length])
+  }, [data.length]);
 
   useEffect(()=>{
     //load data when first page already loaded (not fresh page), when page changes...
     if(!freshPage){
       fetchData();        
     }    
-  }, [page])
+  }, [page]);
 
   useEffect(()=>{    
     (async ()=>{
-      await setIsMax(false)      
-      await setPage(1)
-      setData([])            
+      await setIsMax(false);      
+      await setPage(1);
+      setData([]);            
     })()
-  }, [endpoint, params])
+  }, [endpoint, params]);
 
   const fetchData = async () => {    
     await setLoading(true);
@@ -37,22 +37,24 @@ const useFetchApi = (endpoint, params) => {
     await fetch(ApiEndpoint)
       .then((res) => res.json())
       .then((json) => {
-        //when call tags API, the returned JSON is the data array, while at follower's API the returned json
-        //is an object which have data array as property...
+        /* 
+         * when call tags API, the returned JSON is the data array, 
+         * while at follower's API the returned json
+         * is an object which have data array as property.
+        */
         const newData = Array.isArray(json)?json:json.data;
                 
         if(newData.length > 0){
-          setData(data.concat(newData))
+          setData([...data, ...newData]);
         }else{
-          setIsMax(true)
-        }
-        
+          setIsMax(true);
+        }        
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
       }) 
 
-    setLoading(false)
+    setLoading(false);
   }
 
   const nextPage = () => {
@@ -61,5 +63,3 @@ const useFetchApi = (endpoint, params) => {
 
   return {data, nextPage, isLoading, isMaxPage}
 }
-
-export default useFetchApi;
