@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import FetchContext from '../../context/FetchContext';
+import { FetchContext } from '../../context/FetchContext';
 import Link from 'next/link';
 import { Button as MuiButton } from '@mui/material';
 import { useStyles } from '../../styles/components/global/Button.module.js';
