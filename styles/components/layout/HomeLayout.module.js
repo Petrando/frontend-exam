@@ -43,11 +43,4 @@ return ({
       flexDirection: 'column'
     }      
   },
-  '@media screen and (max-height:350px)':{
-    container: {
-      height:'600px',
-      maxHeight: 'auto',
-      overflow: 'auto',
-    }
-  }, 
 })})
