@@ -26,13 +26,7 @@ return ({
       maxHeight: '100vh',
       maxHeight: 'calc(var(--vh, 1vh) * 100)',
       //maxHeight: '100%',
-    },
-    '@media screen and (max-height:350px)':{
-      container: {
-        height:'100vh',
-        maxHeight: 'auto',
-      }
-    },   
+    },  
   },
   [theme.breakpoints.down('midScreen')]:{    
     container :{
@@ -47,5 +41,11 @@ return ({
       display: 'flex',
       flexDirection: 'column'
     }      
-  }
+  },
+  '@media screen and (max-height:350px)':{
+    container: {
+      height:'600px',
+      maxHeight: 'auto',
+    }
+  }, 
 })})
