@@ -31,6 +31,7 @@ return ({
   [theme.breakpoints.down('midScreen')]:{    
     container :{
       flexDirection: 'column-reverse',
+      overflow: 'auto',
     },
     main:{
       width: '100%',
@@ -46,6 +47,7 @@ return ({
     container: {
       height:'600px',
       maxHeight: 'auto',
+      overflow: 'auto',
     }
   }, 
 })})
