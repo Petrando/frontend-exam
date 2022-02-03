@@ -1,11 +1,11 @@
-import Button, { LinkButton} from "../../global/Button"
+import Button, { LinkButton, SubmitButton} from "../../global/Button"
 import {useStyles} from "../../../styles/components/pages/home/GoToSearch.module"
 
 const GoToSearch = () => {
   const classes = useStyles()
   return (
     <div className={classes.container}>
-      <LinkButton label="SEARCH" href="/search" />
+      <SubmitButton label="SEARCH" />
     </div>
   )
 }

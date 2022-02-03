@@ -52,11 +52,20 @@ export default function Home() {
         console.log(err)
       }) 
   }
-//test
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    router.push(`/search?keyword=${searchText}&pageSize=${itemPerPage}`)
+  }
+
   return (
     <FetchContext.Provider value={{keyword:searchText, pageSize:itemPerPage}}>
       <HomeLayout>     
-        <Box className={classes.container}>
+        <Box 
+          component="form"
+          className={classes.container}
+          onSubmit={ (e) => {handleSubmit(e)} }
+        >
           <NavLogo atNavbar={false} />
           <SearchInput searchText={searchText} setSearchText={setSearchText} />
           <PerPageSlider itemPerPage={itemPerPage} setItemPerPage={setItemPerPage} count={count} />

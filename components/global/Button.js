@@ -1,14 +1,28 @@
 import { useContext } from 'react'
 import FetchContext from '../../context/FetchContext'
-import Link from "next/link"
+import Link from "next/link";
+import { Button as MuiButton } from '@mui/material';
 import {useStyles} from "../../styles/components/global/Button.module"
 
 const Button = ({label, onClick}) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <button className={classes.button} onClick={onClick}>
       {label}
     </button>
+  )
+}
+
+export const SubmitButton = ({label}) => {
+  const classes = useStyles();
+
+  return (
+    <MuiButton
+      className={classes.button}
+      type='submit'
+    >
+      {label}
+    </MuiButton> 
   )
 }
 
