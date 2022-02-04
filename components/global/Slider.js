@@ -3,7 +3,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.js';
 
-export const PageSizeSlider = ({ itemPerPage, setItemPerPage}) => {
+export const PageSlider = ({ pageSize, setPageSize}) => {
   const {width, height} = useWindowDimensions();
   const marksFont = {
     fontStyle: 'normal',
@@ -51,7 +51,7 @@ export const PageSizeSlider = ({ itemPerPage, setItemPerPage}) => {
 
   const changeValue = (newValue) => {
     setCurrentValue(newValue);
-    setItemPerPage(parseInt(perPageMarks[newValue].label));
+    setPageSize(parseInt(perPageMarks[newValue].label));
     let updatedMarks = {};
 
     for(let prop in perPageMarks) {  

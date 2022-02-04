@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import { HomeLayout } from '../components/layout/HomeLayout.js';
 import { NavLogo } from '../components/svg-shapes/NavLogo.js'
 import { SearchInput } from '../components/pages/home/SearchInput.js';
-import { PerPageSlider } from '../components/pages/home/PerPageSlider.js';
+import { PageSizeSlider } from '../components/pages/home/PageSizeSlider.js';
 import { GoToSearch } from '../components/pages/home/GoToSearch.js';
 import { FetchContext } from '../context/FetchContext.js';
 import { useStyles } from '../styles/components/pages/home/Home.module.js';
@@ -12,33 +12,43 @@ import { useStyles } from '../styles/components/pages/home/Home.module.js';
 export default function Home() {
   const classes = useStyles();  
 
-  const [itemPerPage, setItemPerPage] = useState(15);
+  const [pageSize, setPageSize] = useState(15);
   const [searchText, setSearchText] = useState('');
   const [count, setCount] = useState(0);
   const router = useRouter();
 
-  //additional state to handle sent back params..
-  const [initByRouter, setInitByRouter] = useState(false);
+  //additional state to handle sent back query params..
+  const [startFetch, setStartFetch] = useState(false);
 
-  useEffect(()=>{    
-    if(initByRouter){
-      fetchResult();
-    }    
-  }, [searchText, initByRouter]);
-
-  //if there are router query params sent back from backToHome, handle them here
+  /*
+  * There are two possibilities of homepage visit:
+  * First a fresh page visit, second, re-visit back from Search or Tags page.
+  * if there are router query params sent back from BackToHome, 
+  * used by Search or Tags page,  deal with them accordingly....
+  */ 
   useEffect(()=>{
     (async () => {
       if(router.query.keyword){
+        /*
+        * if this page is reached by pressing back at Search or Tags page,
+        * populate relevant states accordingly
+        */
         const {keyword, pageSize} = router.query;
         await setSearchText(keyword);
       }else {
+        //if this is a freshly visited page.
         await setSearchText('');
       }
-
-      setInitByRouter(true);
+      //then allow start fetch from API
+      setStartFetch(true);
     })(); 
   }, []);
+
+  useEffect(()=>{    
+    if(startFetch){
+      fetchResult();
+    }    
+  }, [searchText, startFetch]);
 
   const fetchResult = () => {
     fetch(`https://avl-frontend-exam.herokuapp.com/api/users/all?keyword=${searchText}`)
@@ -53,11 +63,11 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    router.push(`/search?keyword=${searchText}&pageSize=${itemPerPage}`);
+    router.push(`/search?keyword=${searchText}&pageSize=${pageSize}`);
   }
 
   return (
-    <FetchContext.Provider value={{keyword:searchText, pageSize:itemPerPage}}>
+    <FetchContext.Provider value={{keyword:searchText, pageSize:pageSize}}>
       <HomeLayout>     
         <Box 
           component='form'
@@ -66,9 +76,9 @@ export default function Home() {
         >
           <NavLogo atNavbar={false} />
           <SearchInput searchText={searchText} setSearchText={setSearchText} />
-          <PerPageSlider 
-            itemPerPage={itemPerPage} 
-            setItemPerPage={setItemPerPage} 
+          <PageSizeSlider 
+            pageSize={pageSize} 
+            setPageSize={setPageSize} 
             count={count} 
           />
           <GoToSearch />                     
