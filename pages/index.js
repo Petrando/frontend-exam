@@ -37,8 +37,7 @@ export default function Home() {
       }
 
       setInitByRouter(true);
-    })();
-    
+    })(); 
   }, []);
 
   const fetchResult = () => {
