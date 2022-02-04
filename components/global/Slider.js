@@ -67,6 +67,17 @@ export const PageSizeSlider = ({ itemPerPage, setItemPerPage}) => {
     setPageMarks(updatedMarks);
   }
 
+  /*
+  * Slider styling depends on window.innnerWidth & window.innerHeight
+  * if both are still 0, which means window object not accessible yet,
+  * do not render the slider
+  */
+  if ( width === 0 && height === 0 ) {
+    return (
+      <></>
+    );
+  }
+
   return (
     <Slider
       defaultValue={currentValue}

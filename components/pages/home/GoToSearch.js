@@ -1,4 +1,4 @@
-import { SubmitButton} from '../../global/Button.js';
+import { SubmitButton, LinkButton } from '../../global/Button.js';
 import { useStyles } from '../../../styles/components/pages/home/GoToSearch.module.js';
 
 export const GoToSearch = () => {
@@ -6,7 +6,7 @@ export const GoToSearch = () => {
 
   return (
     <div className={classes.container}>
-      <SubmitButton label='SEARCH' />
+      <LinkButton label='SEARCH' href='/search' />
     </div>
   );
 }
