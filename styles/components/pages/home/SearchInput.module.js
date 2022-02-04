@@ -36,22 +36,17 @@ export const useStyles = makeStyles((theme)=>({
     container: {
       /*height:calc(22.41379310344828vh - 8.62068965517241vh) !important;*/
       flex: '1 1 13.79310344827587vh',
-      flex: '1 1 calc(var(--vh, 1vh) * 13.79310344827587)',
-      //flexDirection: 'row',
+      flex: '1 1 calc(var(--vh, 1vh) * 13.79310344827587)',      
       justifyContent: 'space-between',
-      //alignItems: 'center',
       borderBottom: '0px solid transparent',
-      //backgroundColor: 'darkcyan',
     },  
     sectionTitle: {
       margin: '0px',
       padding: '0px',
+      // hack position to match figma mobile...
       position: 'relative',
-      //top: '6px',
-      top: '0.73891625615764vh',
+      top: '0.73891625615764vh', //6px of 812px figma mobile height
       top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
-      //marginBottom: '2.70935960591133vh',/*1.97044334975369vh;*/
-      //marginBottom: 'calc(var(--vh, 1vh) * 2.70935960591133)',
     },
   },
 }));
