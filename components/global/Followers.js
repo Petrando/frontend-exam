@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { SmallButton } from './Button.js';
 import { Loading } from './Loading.js';
 import { useFetchApi } from '../../hooks/useFetchApi.js';
-import { useStyles } from '../../styles/components/pages/shared/Followers.module.js';
+import { useStyles } from '../../styles/components/global/Followers.module.js';
 
 export const Followers = () => {
   const classes = useStyles();
