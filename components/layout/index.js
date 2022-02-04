@@ -1,6 +1,6 @@
 import { Box, ThemeProvider } from '@mui/material';
 import { Navbar } from './Navbar.js';
-import { BackToHome } from '../pages/shared/BackToHome.js';
+import { BackToHome } from '../global/BackToHome.js';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.js';
 import { useStyles } from '../../styles/components/layout/Layout.module.js';
 import theme from '../../styles/theme';//have to use default import
