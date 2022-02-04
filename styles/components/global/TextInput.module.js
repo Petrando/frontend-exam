@@ -23,6 +23,10 @@ export const useStyles = makeStyles((theme)=>({
     input: {
       margin: '0px',
       padding: '0px 0px 0px 18px',
+      // hack position to match figma mobile...
+      position: 'relative',
+      top: '0.73891625615764vh', //6px of 812px figma mobile height
+      top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
     },
   },
 }));
