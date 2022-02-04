@@ -53,6 +53,10 @@ export const useStyles = makeStyles((theme)=>({
       '& > *': {
         marginBottom: '2.70935960591133vh',/*1.97044334975369vh;*/
         marginBottom: 'calc(var(--vh, 1vh) * 2.70935960591133)',
+        // hack position to match figma mobile...
+        position: 'relative',
+        top: '0.73891625615764vh', //6px of 812px figma mobile height
+        top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
       },
     },  
     sectionTitle: {
