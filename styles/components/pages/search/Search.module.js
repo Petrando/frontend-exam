@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme)=>({
     letterSpacing: '0.25px',
     marginTop: '0px',
     position: 'relative',
-    left: '3px', //hack to match figma large screen
+    left: '3.5px', //hack to match figma large screen
     bottom: '0.5px', //hack to match figma large screen
     textAlign: 'start',
     marginTop: '99.5px',//'calc(92px + 7.5px)'
