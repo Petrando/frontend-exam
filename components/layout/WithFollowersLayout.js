@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { Followers } from '../pages/shared/Followers.js';
+import { Followers } from '../global/Followers.js';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.js';
 import { useStyles } from '../../styles/components/layout/WithFollowers.module';
 

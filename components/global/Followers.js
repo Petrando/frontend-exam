@@ -3,10 +3,10 @@ import { useRouter } from 'next/router';
 import { Box } from '@mui/material';
 import Image from 'next/image';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { SmallButton } from '../../global/Button.js';
-import { Loading } from '../../global/Loading.js';
-import { useFetchApi } from '../../../hooks/useFetchApi.js';
-import { useStyles } from '../../../styles/components/pages/shared/Followers.module.js';
+import { SmallButton } from './Button.js';
+import { Loading } from './Loading.js';
+import { useFetchApi } from '../../hooks/useFetchApi.js';
+import { useStyles } from '../../styles/components/pages/shared/Followers.module.js';
 
 export const Followers = () => {
   const classes = useStyles();
