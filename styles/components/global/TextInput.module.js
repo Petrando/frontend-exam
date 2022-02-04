@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-export const useStyles = makeStyles(()=>({
+export const useStyles = makeStyles((theme)=>({
   input: {
     width: '100%',
     height: '60px',
@@ -17,6 +17,12 @@ export const useStyles = makeStyles(()=>({
       borderRadius: '6px',
       border: '3px solid #FF9B33',
       outline: 'none'
+    },
+  },
+  [theme.breakpoints.down('midScreen')]: {
+    input: {
+      margin: '0px',
+      padding: '0px',
     },
   },
 }));

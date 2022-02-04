@@ -35,14 +35,23 @@ export const useStyles = makeStyles((theme)=>({
   [theme.breakpoints.down('midScreen')]: {
     container: {
       /*height:calc(22.41379310344828vh - 8.62068965517241vh) !important;*/
-      flex: '1 1 calc(22.41379310344828vh - 8.62068965517241vh)',
-      flex: '1 1 calc(var(--vh, 1vh) * (22.41379310344828 - 8.62068965517241))',
-      justifyContent: 'flex-end',
+      flex: '1 1 13.79310344827587vh',
+      flex: '1 1 calc(var(--vh, 1vh) * 13.79310344827587)',
+      //flexDirection: 'row',
+      justifyContent: 'space-between',
+      //alignItems: 'center',
       borderBottom: '0px solid transparent',
+      //backgroundColor: 'darkcyan',
     },  
     sectionTitle: {
-      marginBottom: '2.70935960591133vh',/*1.97044334975369vh;*/
-      marginBottom: 'calc(var(--vh, 1vh) * 2.70935960591133)',
+      margin: '0px',
+      padding: '0px',
+      position: 'relative',
+      //top: '6px',
+      top: '0.73891625615764vh',
+      top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
+      //marginBottom: '2.70935960591133vh',/*1.97044334975369vh;*/
+      //marginBottom: 'calc(var(--vh, 1vh) * 2.70935960591133)',
     },
   },
 }));
