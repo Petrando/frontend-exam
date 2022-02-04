@@ -42,17 +42,13 @@ export const useStyles = makeStyles((theme)=>({
       '& > *': {
         // hack position to match figma mobile...
         position: 'relative',
-        top: '0.73891625615764vh', //6px of 812px figma mobile height
-        top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
+        top: '0.86206896551724vh', //6px of 812px figma mobile height
+        top: 'calc(var(--vh, 1vh) * 0.86206896551724)',
       }
     },  
     sectionTitle: {
       margin: '0px',
       padding: '0px',
-      // hack position to match figma mobile...
-      //position: 'relative',
-      //top: '0.73891625615764vh', //6px of 812px figma mobile height
-      //top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
     },
   },
 }));
