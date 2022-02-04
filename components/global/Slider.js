@@ -84,7 +84,7 @@ export const PageSlider = ({ pageSize, setPageSize}) => {
       min={1}
       max={6}
       step={null}
-      onChange={(e) => {changeValue(parseInt(e))}}
+      onChange={(e) => {changeValue(parseInt(e));}}
       marks={perPageMarks}
       style={{ width: '100%' }}
       dotStyle={{opacity:0}}
