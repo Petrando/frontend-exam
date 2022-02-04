@@ -33,7 +33,6 @@ const Search = () => {
               </a>
             </Link>
           </h2>
-
           {
             searchData.length > 0 && 
             <Box className={classes.grid}>
