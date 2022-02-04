@@ -42,7 +42,7 @@ export const useStyles = makeStyles((theme)=>({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '25px',
+    height: '29px',
     width: 'auto',
     borderRadius: '20px',
     padding: 'auto 10px',
