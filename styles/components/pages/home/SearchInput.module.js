@@ -39,14 +39,20 @@ export const useStyles = makeStyles((theme)=>({
       flex: '1 1 calc(var(--vh, 1vh) * 13.79310344827587)',      
       justifyContent: 'space-between',
       borderBottom: '0px solid transparent',
+      '& > *': {
+        // hack position to match figma mobile...
+        position: 'relative',
+        top: '0.73891625615764vh', //6px of 812px figma mobile height
+        top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
+      }
     },  
     sectionTitle: {
       margin: '0px',
       padding: '0px',
       // hack position to match figma mobile...
-      position: 'relative',
-      top: '0.73891625615764vh', //6px of 812px figma mobile height
-      top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
+      //position: 'relative',
+      //top: '0.73891625615764vh', //6px of 812px figma mobile height
+      //top: 'calc(var(--vh, 1vh) * 0.73891625615764)',
     },
   },
 }));

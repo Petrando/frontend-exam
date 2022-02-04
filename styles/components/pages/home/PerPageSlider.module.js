@@ -61,8 +61,8 @@ export const useStyles = makeStyles((theme)=>({
     },  
     sectionTitle: {
       padding: '0px',
-      marginTop: '4.1871921182266vh',
-      marginTop: 'calc(var(--vh, 1vh) * 4.1871921182266)',
+      marginTop: 'calc(4.1871921182266vh + 1px)', // 1px is hack to match figma mobile
+      marginTop: 'calc((var(--vh, 1vh) * 4.1871921182266) + 1px)',
     }, 
   },
   '@media screen and (min-width:415px) and (max-width:475px) and (max-height:700px)':{
