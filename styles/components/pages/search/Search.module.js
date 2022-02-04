@@ -14,6 +14,8 @@ export const useStyles = makeStyles((theme)=>({
     letterSpacing: '0.25px',
     marginTop: '0px',
     position: 'relative',
+    left: '2px', //hack to match figma large screen
+    bottom: '0.5px', //hack to match figma large screen
     textAlign: 'start',
     marginTop: '99.5px',//'calc(92px + 7.5px)'
   },
@@ -46,6 +48,8 @@ export const useStyles = makeStyles((theme)=>({
       fontSize: '24px',
       marginTop:'26px',
       marginBottom:'24px',
+      left: '0px', //neutralize above hack
+      bottom: '0px', //neutralize above hack
     },
     action: {
       display: 'none',
