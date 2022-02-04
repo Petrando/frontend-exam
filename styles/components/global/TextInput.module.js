@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme)=>({
   [theme.breakpoints.down('midScreen')]: {
     input: {
       margin: '0px',
-      padding: '0px',
+      padding: '0px 0px 0px 18px',
     },
   },
 }));
